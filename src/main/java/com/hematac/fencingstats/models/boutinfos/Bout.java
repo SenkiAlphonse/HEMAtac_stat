@@ -19,21 +19,20 @@ public class Bout {
   @JoinColumn(name = "event_id")
   private Event event;
 
-  @ManyToMany(cascade = {
-      CascadeType.PERSIST,
-      CascadeType.MERGE,
-      CascadeType.REFRESH
-  })
-  @JoinTable(name = "bout_fencer",
-      joinColumns = @JoinColumn(name = "bout_id"),
-      inverseJoinColumns = @JoinColumn(name = "fencer_id")
-  )
-  private List<Fencer> fencers = new ArrayList<>();
-  //Fencers don't have to be users.
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "fencer_green_id")
+  private Fencer fencerGreen;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "fencer_red_id")
+  private Fencer fencerRed;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "referee_id")
   private Referee referee;
 
   private BoutType boutType;
+
+  //bout resultot is érdemes tárolni v számolni,
+  // és a meccs végződéének okát -->pont limit, idő limit, feketelap, sárülés, egyéb
 }

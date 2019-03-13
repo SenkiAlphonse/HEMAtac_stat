@@ -20,16 +20,20 @@ public class Touch {
   private Bout bout;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "exchange_winner")
-  private Fencer exchangeWinner;
+  @JoinColumn(name = "fencing_action")
+  private FencingAction fencingAction;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "given_by")
+  private Fencer givenBy;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "received_by")
+  private Fencer receivedBy;
 
   @CreationTimestamp
   @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "date_created")
   private Date dateCreated;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencing_action")
-  private FencingAction fencingAction;
 
 }

@@ -17,9 +17,9 @@ public class BoutType {
 
   private String name;
 
-  private int pointLimit;
+  private int pointCap;
 
-  private int timeLimit;
+  private int timeCap;
 
 
 }
