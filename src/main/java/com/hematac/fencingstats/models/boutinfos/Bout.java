@@ -16,7 +16,7 @@ public class Bout {
   private long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "event")
+  @JoinColumn(name = "event_id")
   private Event event;
 
   @ManyToMany(cascade = {
@@ -28,22 +28,12 @@ public class Bout {
       joinColumns = @JoinColumn(name = "bout_id"),
       inverseJoinColumns = @JoinColumn(name = "fencer_id")
   )
-  private List<Fencer> tags = new ArrayList<>();
+  private List<Fencer> fencers = new ArrayList<>();
   //Fencers don't have to be users.
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "referee")
+  @JoinColumn(name = "referee_id")
   private Referee referee;
 
   private BoutType boutType;
-
-  private int pointLimit;
-
-  private int timeLimit;
-
-  
-
-
-
-
 }

@@ -1,5 +1,6 @@
 package com.hematac.fencingstats.models.boutinfos;
 
+import com.hematac.fencingstats.models.actioninfos.FencingAction;
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -27,5 +28,8 @@ public class Touch {
   @Column(name = "date_created")
   private Date dateCreated;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "fencing_action")
+  private FencingAction fencingAction;
 
 }
