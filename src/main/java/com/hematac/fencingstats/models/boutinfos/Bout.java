@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "bouts")
-public class Bout {
+public abstract class Bout {
 
   @Id
   @GeneratedValue
