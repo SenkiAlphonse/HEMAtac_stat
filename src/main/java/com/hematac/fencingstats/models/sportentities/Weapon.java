@@ -1,4 +1,4 @@
-package com.hematac.fencingstats.models.boutinfos;
+package com.hematac.fencingstats.models.sportentities;
 
 import com.hematac.fencingstats.models.boutinfos.Event;
 
@@ -14,7 +14,7 @@ public class Weapon {
   @GeneratedValue
   private long id;
 
-  private String weaponType;
+  private String weaponName;
 
   private String athleteGender;
 
