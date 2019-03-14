@@ -1,4 +1,4 @@
-package com.hematac.fencingstats.models.userhandling;
+package com.hematac.fencingstats.models.sportentities;
 
 import javax.persistence.*;
 import java.util.List;

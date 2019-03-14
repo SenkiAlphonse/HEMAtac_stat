@@ -1,7 +1,7 @@
 package com.hematac.fencingstats.models.boutinfos;
 
 import com.hematac.fencingstats.models.sportentities.Weapon;
-import com.hematac.fencingstats.models.userhandling.Club;
+import com.hematac.fencingstats.models.sportentities.Club;
 
 import javax.persistence.*;
 import java.util.HashSet;

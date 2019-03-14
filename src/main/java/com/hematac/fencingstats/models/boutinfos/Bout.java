@@ -34,7 +34,7 @@ public abstract class Bout {
   private Referee referee;
 
   @OneToMany(mappedBy = "bout")
-  private List<AssaultOutcome> assaultOutcomeList = new ArrayList<>();
+  private List<AssaultOutcome> assaultList = new ArrayList<>();
 
 
 

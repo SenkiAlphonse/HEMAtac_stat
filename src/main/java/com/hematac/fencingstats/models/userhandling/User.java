@@ -1,6 +1,7 @@
 package com.hematac.fencingstats.models.userhandling;
 
-import com.hematac.fencingstats.models.sportentities.Weapon;
+import com.hematac.fencingstats.models.sportentities.ClubAffiliation;
+import com.hematac.fencingstats.models.sportentities.Handedness;
 
 import javax.persistence.*;
 import java.util.List;
@@ -16,12 +17,6 @@ public class User {
   private String firstName;
   private String middleName;
   private String lastName;
-
-  private Handedness handedness;
-
-  @OneToMany(mappedBy = "user",
-      cascade = CascadeType.REMOVE)
-  private List<ClubAffiliation> clubAffiliationHistory;
 
 
   //club membership w start and end dates, bidirectional one-to many entity.

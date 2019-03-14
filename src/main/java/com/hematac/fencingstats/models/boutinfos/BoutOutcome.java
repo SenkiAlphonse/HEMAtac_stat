@@ -1,5 +1,5 @@
 package com.hematac.fencingstats.models.boutinfos;
 
 public enum BoutOutcome {
-  WON_BY_POINTCAP, ENDED_BY_TIMEOUT, ENDED_BY_INJURY,
+  WON_AT_POINTCAP, ENDED_AT_TIMEOUT, WON_IN_ADDITIONAL_TIME, ENDED_BY_INJURY, ENDED_BY_PENALTY
 }

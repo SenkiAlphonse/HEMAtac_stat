@@ -1,6 +1,4 @@
-package com.hematac.fencingstats.models.userhandling;
-
-import com.hematac.fencingstats.models.sportentities.Fencer;
+package com.hematac.fencingstats.models.sportentities;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,8 +12,8 @@ public class ClubAffiliation {
   private long id;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "user_id")
-  private User user;
+  @JoinColumn(name = "fencer_id")
+  private Fencer fencer;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "club_id")
