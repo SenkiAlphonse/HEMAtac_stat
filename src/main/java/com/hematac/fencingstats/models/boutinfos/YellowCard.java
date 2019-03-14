@@ -5,5 +5,5 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "yellow_cards")
-public class YellowCard extends PenaltyCard {
+public class YellowCard extends AssaultOutcome {
 }

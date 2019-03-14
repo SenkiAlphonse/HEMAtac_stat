@@ -11,24 +11,7 @@ import java.util.Date;
 
 @Entity
 @Table(name = "touches")
-public class Touch {
-
-  @Id
-  @GeneratedValue
-  private long id;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "bout")
-  private Bout bout;
-
-  private FencersOfBout givenBy;
-/*  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "given_by")
-  private Fencer givenBy;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "received_by")
-  private Fencer receivedBy;*/
+public class Touch extends AssaultOutcome {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "fencing_action_id")
@@ -42,9 +25,6 @@ public class Touch {
   @JoinColumn(name = "target_id")
   private Target target;
 
-  @CreationTimestamp
-  @Temporal(TemporalType.TIMESTAMP)
-  @Column(name = "date_created")
-  private Date dateCreated;
+
 
 }
