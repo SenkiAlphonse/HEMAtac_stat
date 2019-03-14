@@ -4,8 +4,6 @@ import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "bouts")
@@ -20,12 +18,12 @@ public class Bout {
   private Event event;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencer_green_id")
-  private Fencer fencerGreen;
+  @JoinColumn(name = "fencer_one_id")
+  private Fencer fencerOne;
 
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencer_red_id")
-  private Fencer fencerRed;
+  @JoinColumn(name = "fencer_two_id")
+  private Fencer fencerTwo;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "referee_id")
@@ -34,5 +32,5 @@ public class Bout {
   private BoutType boutType;
 
   //bout resultot is érdemes tárolni v számolni,
-  // és a meccs végződéének okát -->pont limit, idő limit, feketelap, sárülés, egyéb
+  //és a meccs végződéének okát -->pont limit, idő limit, feketelap, sárülés, egyéb
 }

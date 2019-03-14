@@ -8,4 +8,5 @@ import javax.persistence.Table;
 public class Fencer {
 
   //handedness!!
+  //club membership w start and end dates, bidirectional one-to many entity.
 }
