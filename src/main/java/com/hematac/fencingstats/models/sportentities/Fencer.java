@@ -11,11 +11,17 @@ public class Fencer {
   @GeneratedValue
   private long id;
 
+  private String nationality;
+
   private Handedness handedness;
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
-  private List<ClubAffiliation> clubAffiliationHistory;
+  private List<FencerClubAffiliation> fencerClubAffiliationHistory;
+
+  @OneToMany(mappedBy = "fencer",
+      cascade = CascadeType.REMOVE)
+  private List<FencerCoachAffiliation> coachAffiliationHistory;
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)

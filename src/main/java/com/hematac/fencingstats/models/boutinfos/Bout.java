@@ -2,9 +2,11 @@ package com.hematac.fencingstats.models.boutinfos;
 
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
+import com.hematac.fencingstats.models.sportentities.Weapon;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,6 +20,10 @@ public abstract class Bout {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "event_id")
   private Event event;
+
+  private Date date;
+
+  private Weapon weapon;
 
   private BoutType boutType;
 
@@ -34,9 +40,7 @@ public abstract class Bout {
   private Referee referee;
 
   @OneToMany(mappedBy = "bout")
-  private List<AssaultOutcome> assaultList = new ArrayList<>();
+  private List<AssaultOutcome> assaultOutcomeList = new ArrayList<>();
 
-
-
-  //bout resultot is érdemes tárolni v számolni,s a meccs végződéének okát -->pont limit, idő limit, feketelap, sárülés, egyéb
+  private BoutOutcome boutOutcome;
 }

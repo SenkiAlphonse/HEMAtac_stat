@@ -25,6 +25,6 @@ public class Touch extends AssaultOutcome {
   @JoinColumn(name = "target_id")
   private Target target;
 
-
+  private Boolean isFirstAfterBreak;
 
 }

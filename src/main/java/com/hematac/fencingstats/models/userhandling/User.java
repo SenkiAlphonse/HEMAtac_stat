@@ -1,10 +1,6 @@
 package com.hematac.fencingstats.models.userhandling;
 
-import com.hematac.fencingstats.models.sportentities.ClubAffiliation;
-import com.hematac.fencingstats.models.sportentities.Handedness;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "users")

@@ -20,8 +20,8 @@ public class Event {
   private String country;
   //could be enum or set or else, to pick country code.
 
-  private Club organiserEntity;
-  //club or federation or committee
+  private String organiser;
+  //club or federation or committee.
 
   @ManyToMany(cascade = {
       CascadeType.PERSIST,
@@ -33,6 +33,4 @@ public class Event {
       inverseJoinColumns = @JoinColumn(name = "weapon_id")
   )
   private Set<Weapon> weapons = new HashSet<>();
-
-
 }

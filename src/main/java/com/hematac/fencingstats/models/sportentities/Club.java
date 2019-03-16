@@ -13,7 +13,7 @@ public class Club {
 
   @OneToMany(mappedBy = "club",
       cascade = CascadeType.REMOVE)
-  private List<ClubAffiliation> clubAffiliationHistory;
+  private List<FencerClubAffiliation> fencerClubAffiliationHistory;
 
   public long getId() {
     return id;
@@ -23,11 +23,11 @@ public class Club {
     this.id = id;
   }
 
-  public List<ClubAffiliation> getClubAffiliationHistory() {
-    return clubAffiliationHistory;
+  public List<FencerClubAffiliation> getFencerClubAffiliationHistory() {
+    return fencerClubAffiliationHistory;
   }
 
-  public void setClubAffiliationHistory(List<ClubAffiliation> clubAffiliationHistory) {
-    this.clubAffiliationHistory = clubAffiliationHistory;
+  public void setFencerClubAffiliationHistory(List<FencerClubAffiliation> fencerClubAffiliationHistory) {
+    this.fencerClubAffiliationHistory = fencerClubAffiliationHistory;
   }
 }
