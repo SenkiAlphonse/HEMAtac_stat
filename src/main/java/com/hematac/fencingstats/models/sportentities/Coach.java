@@ -12,7 +12,25 @@ public class Coach {
 
   private String nationality;
 
+  private String diplomaId;
+
+  private String diplomaTitle;
+
+  private String diplomaIssuer;
+
   @OneToMany(mappedBy = "coach",
       cascade = CascadeType.REMOVE)
-  private List<FencerCoachAffiliation> fencerAffiliationHistory;
+  private List<FencerCoachAffiliation> fencerCoachAffiliationHistory;
+
+  @OneToMany(mappedBy = "coach",
+      cascade = CascadeType.REMOVE)
+  private List<RefereeCoachAffiliation> refereeCoachAffiliationHistory;
+
+  @OneToMany(mappedBy = "coach",
+      cascade = CascadeType.REMOVE)
+  private List<CoachClubAffiliation> coachClubAffiliationHistory;
+
+  @OneToMany(mappedBy = "coach",
+      cascade = CascadeType.REMOVE)
+  private List<CoachTeamAffiliation> coachTeamAffiliationHistory;
 }

@@ -13,5 +13,8 @@ public class Team {
   private long id;
 
   @OneToMany(mappedBy = "team")
-  private List<TeamAffiliation> teamAffiliationList = new ArrayList<>();
+  private List<FencerTeamAffiliation> fencerTeamAffiliationList = new ArrayList<>();
+
+  @OneToMany(mappedBy = "team")
+  private List<CoachTeamAffiliation> coachTeamAffiliationList = new ArrayList<>();
 }

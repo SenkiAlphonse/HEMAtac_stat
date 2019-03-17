@@ -2,28 +2,29 @@ package com.hematac.fencingstats.models.sportentities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Ref;
 import java.util.Date;
 
 @Entity
-@Table(name = "fencer_club_affiliations")
-public class FencerClubAffiliation {
-
+@Table(name = "referee_coach")
+public class RefereeCoachAffiliation {
   @Id
   @GeneratedValue
-  private long id;
+  private Long id;
 
   @NotNull
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencer_id")
-  private Fencer fencer;
+  @JoinColumn(name = "referee_id")
+  private Referee referee;
 
   @NotNull
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "club_id")
-  private Club club;
+  @JoinColumn(name = "coach_id")
+  private Coach coach;
 
   @NotNull
   private Date startDate;
 
-  private Date quitDate;
+  private Date endDate;
+
 }

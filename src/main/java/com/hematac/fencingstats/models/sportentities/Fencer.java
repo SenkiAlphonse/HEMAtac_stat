@@ -21,9 +21,9 @@ public class Fencer {
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
-  private List<FencerCoachAffiliation> coachAffiliationHistory;
+  private List<FencerCoachAffiliation> fencerCoachAffiliationHistory;
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
-  private List<TeamAffiliation> teamAffiliationHistory;
+  private List<FencerTeamAffiliation> fencerTeamAffiliationHistory;
 }

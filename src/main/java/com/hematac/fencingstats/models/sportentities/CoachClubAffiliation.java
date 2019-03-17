@@ -5,8 +5,8 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
-@Table(name = "fencer_club_affiliations")
-public class FencerClubAffiliation {
+@Table(name = "coach_club_affiliations")
+public class CoachClubAffiliation {
 
   @Id
   @GeneratedValue
@@ -14,8 +14,8 @@ public class FencerClubAffiliation {
 
   @NotNull
   @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencer_id")
-  private Fencer fencer;
+  @JoinColumn(name = "coach_id")
+  private Coach coach;
 
   @NotNull
   @ManyToOne(fetch = FetchType.LAZY)

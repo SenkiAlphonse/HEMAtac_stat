@@ -15,6 +15,14 @@ public class Club {
       cascade = CascadeType.REMOVE)
   private List<FencerClubAffiliation> fencerClubAffiliationHistory;
 
+  @OneToMany(mappedBy = "club",
+      cascade = CascadeType.REMOVE)
+  private List<CoachClubAffiliation> coachClubAffiliationHistory;
+
+  @OneToMany(mappedBy = "club",
+      cascade = CascadeType.REMOVE)
+  private List<RefereeClubAffiliation> refereeClubAffiliationHistory;
+
   public long getId() {
     return id;
   }

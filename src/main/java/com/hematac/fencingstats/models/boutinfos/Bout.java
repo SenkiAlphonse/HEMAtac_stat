@@ -27,6 +27,8 @@ public abstract class Bout {
 
   private BoutType boutType;
 
+  //arena size/shape??
+
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "fencer_one_id")
   private Fencer fencerOne;

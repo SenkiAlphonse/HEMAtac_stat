@@ -16,6 +16,18 @@ public class Referee {
 
   private String nationality;
 
+  private String licenseInfo; //licensedBy - clubs, federtions??
+
   @OneToMany(mappedBy = "referee")
   private List<Bout> directedBoutList = new ArrayList<>();
+
+  @OneToMany(mappedBy = "referee",
+      cascade = CascadeType.REMOVE)
+  private List<RefereeClubAffiliation> refereeClubAffiliationHistory;
+
+  @OneToMany(mappedBy = "referee",
+      cascade = CascadeType.REMOVE)
+  private List<RefereeCoachAffiliation> refereeCoachAffiliationHistory;
+
+  private int rating; //for later consideration :-O
 }

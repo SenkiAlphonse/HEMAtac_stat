@@ -2,8 +2,10 @@ package com.hematac.fencingstats.models.sportentities;
 
 import javax.annotation.Generated;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
-public class TeamAffiliation {
+public class FencerTeamAffiliation {
 
   @Id
   @GeneratedValue
@@ -16,5 +18,10 @@ public class TeamAffiliation {
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "fencer_id")
   private Fencer fencer;
+
+  @NotNull
+  private Date startDate;
+
+  private Date quitDate;
 
 }
