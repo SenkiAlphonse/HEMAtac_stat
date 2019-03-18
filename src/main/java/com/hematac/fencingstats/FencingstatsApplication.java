@@ -17,10 +17,13 @@ public class FencingstatsApplication {
 
   //oneToOne map user - fencer, user - coach, user - referee
 
-  //user-user association
-
   //törlési lehetőség
 
   //Federations mint entity hozzáadni
+
+  //user -->
+    //club membership w start and end dates, bidirectional one-to many entity.
+    //one-to-one map to sportsentities
+    //list of users the user allows access to their data
 
 }

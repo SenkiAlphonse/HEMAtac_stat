@@ -1,6 +1,7 @@
 package com.hematac.fencingstats.models.sportentities;
 
 import com.hematac.fencingstats.models.boutinfos.Bout;
+import com.hematac.fencingstats.models.userhandling.User;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -28,6 +29,10 @@ public class Referee {
   @OneToMany(mappedBy = "referee",
       cascade = CascadeType.REMOVE)
   private List<RefereeCoachAffiliation> refereeCoachAffiliationHistory;
+
+  @OneToOne(mappedBy = "referee", cascade = CascadeType.ALL,
+      fetch = FetchType.LAZY)
+  private User user;
 
   private int rating; //for later consideration :-O
 }

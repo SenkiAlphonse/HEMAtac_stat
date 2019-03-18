@@ -1,5 +1,7 @@
 package com.hematac.fencingstats.models.sportentities;
 
+import com.hematac.fencingstats.models.userhandling.User;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -33,4 +35,8 @@ public class Coach {
   @OneToMany(mappedBy = "coach",
       cascade = CascadeType.REMOVE)
   private List<CoachTeamAffiliation> coachTeamAffiliationHistory;
+
+  @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL,
+      fetch = FetchType.LAZY)
+  private User user;
 }
