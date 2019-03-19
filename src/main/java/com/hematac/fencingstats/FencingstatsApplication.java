@@ -10,16 +10,15 @@ public class FencingstatsApplication {
     SpringApplication.run(FencingstatsApplication.class, args);
   }
 
-  //userek tudjanak engedélyt adni más usereknek arra, hogy láthassák az adataikat.
-  //User role-okat felül kell vizsgálni.
-  //coach entity a sportentitiesbe
-  //fencer-coach-affiliation tábla a sportentitybe
+  //userek tudjanak engedélyt adni más usereknek arra, hogy láthassák az adataikat. Egy ilyen engedély egyirányú kell legyen.
 
-  //oneToOne map user - fencer, user - coach, user - referee
+  //user fields validation (strings)
 
   //törlési lehetőség
 
-  //Federations mint entity hozzáadni
+  //Federation - club association, fed-fed association (super-sub)
+
+  //list/set collection usage revision!
 
   //user -->
     //club membership w start and end dates, bidirectional one-to many entity.

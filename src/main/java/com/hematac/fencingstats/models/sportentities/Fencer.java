@@ -32,4 +32,6 @@ public class Fencer {
   @OneToOne(mappedBy = "fencer", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)
   private User user;
+
+
 }
