@@ -30,7 +30,7 @@ public class Referee {
       cascade = CascadeType.REMOVE)
   private List<RefereeCoachAffiliation> refereeCoachAffiliationHistory;
 
-  @OneToOne(mappedBy = "referee", cascade = CascadeType.ALL,
+  @OneToOne(mappedBy = "iAmaReferee", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)
   private User user;
 

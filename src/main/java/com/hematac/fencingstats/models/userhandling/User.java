@@ -6,9 +6,7 @@ import com.hematac.fencingstats.models.sportentities.Referee;
 import com.hematac.fencingstats.models.sportentities.Weapon;
 
 import javax.persistence.*;
-import java.sql.Ref;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -30,15 +28,15 @@ public class User {
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "fencer_id")
-  private Fencer fencer;
+  private Fencer iAmaFencer;
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "referee_id")
-  private Referee referee;
+  private Referee iAmaReferee;
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "coach_id")
-  private Coach coach;
+  private Coach iAmaCoach;
 
   //users can allow other users to view their stats, e.g. fencers can allow coaches to view their data but it does not have to be bidirectional.
   @ManyToMany

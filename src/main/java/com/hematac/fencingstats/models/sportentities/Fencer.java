@@ -29,7 +29,7 @@ public class Fencer {
       cascade = CascadeType.REMOVE)
   private List<FencerTeamAffiliation> fencerTeamAffiliationHistory;
 
-  @OneToOne(mappedBy = "fencer", cascade = CascadeType.ALL,
+  @OneToOne(mappedBy = "iAmaFencer", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)
   private User user;
 

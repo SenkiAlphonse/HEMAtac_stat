@@ -36,7 +36,7 @@ public class Coach {
       cascade = CascadeType.REMOVE)
   private List<CoachTeamAffiliation> coachTeamAffiliationHistory;
 
-  @OneToOne(mappedBy = "coach", cascade = CascadeType.ALL,
+  @OneToOne(mappedBy = "iAmaCoach", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)
   private User user;
 }
