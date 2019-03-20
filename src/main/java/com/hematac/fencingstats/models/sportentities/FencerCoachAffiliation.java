@@ -25,4 +25,44 @@ public class FencerCoachAffiliation {
   private Date startDate;
 
   private Date endDate;
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Fencer getFencer() {
+    return fencer;
+  }
+
+  public void setFencer(Fencer fencer) {
+    this.fencer = fencer;
+  }
+
+  public Coach getCoach() {
+    return coach;
+  }
+
+  public void setCoach(Coach coach) {
+    this.coach = coach;
+  }
+
+  public Date getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
+  }
+
+  public Date getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
+  }
 }

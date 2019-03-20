@@ -4,6 +4,7 @@ import com.hematac.fencingstats.models.userhandling.User;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Locale;
 
 @Entity
 @Table(name = "fencers")
@@ -13,7 +14,7 @@ public class Fencer {
   @GeneratedValue
   private long id;
 
-  private String nationality;
+  private Locale nationality;
 
   private Handedness handedness;
 
@@ -33,5 +34,59 @@ public class Fencer {
       fetch = FetchType.LAZY)
   private User user;
 
+  public long getId() {
+    return id;
+  }
 
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public Locale getNationality() {
+    return nationality;
+  }
+
+  public void setNationality(Locale nationality) {
+    this.nationality = nationality;
+  }
+
+  public Handedness getHandedness() {
+    return handedness;
+  }
+
+  public void setHandedness(Handedness handedness) {
+    this.handedness = handedness;
+  }
+
+  public List<FencerClubAffiliation> getFencerClubAffiliationHistory() {
+    return fencerClubAffiliationHistory;
+  }
+
+  public void setFencerClubAffiliationHistory(List<FencerClubAffiliation> fencerClubAffiliationHistory) {
+    this.fencerClubAffiliationHistory = fencerClubAffiliationHistory;
+  }
+
+  public List<FencerCoachAffiliation> getFencerCoachAffiliationHistory() {
+    return fencerCoachAffiliationHistory;
+  }
+
+  public void setFencerCoachAffiliationHistory(List<FencerCoachAffiliation> fencerCoachAffiliationHistory) {
+    this.fencerCoachAffiliationHistory = fencerCoachAffiliationHistory;
+  }
+
+  public List<FencerTeamAffiliation> getFencerTeamAffiliationHistory() {
+    return fencerTeamAffiliationHistory;
+  }
+
+  public void setFencerTeamAffiliationHistory(List<FencerTeamAffiliation> fencerTeamAffiliationHistory) {
+    this.fencerTeamAffiliationHistory = fencerTeamAffiliationHistory;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
+  }
 }

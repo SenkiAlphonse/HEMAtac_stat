@@ -45,4 +45,84 @@ public abstract class Bout {
   private List<AssaultOutcome> assaultOutcomeList = new ArrayList<>();
 
   private BoutOutcome boutOutcome;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public Event getEvent() {
+    return event;
+  }
+
+  public void setEvent(Event event) {
+    this.event = event;
+  }
+
+  public Date getDate() {
+    return date;
+  }
+
+  public void setDate(Date date) {
+    this.date = date;
+  }
+
+  public Weapon getWeapon() {
+    return weapon;
+  }
+
+  public void setWeapon(Weapon weapon) {
+    this.weapon = weapon;
+  }
+
+  public BoutType getBoutType() {
+    return boutType;
+  }
+
+  public void setBoutType(BoutType boutType) {
+    this.boutType = boutType;
+  }
+
+  public Fencer getFencerOne() {
+    return fencerOne;
+  }
+
+  public void setFencerOne(Fencer fencerOne) {
+    this.fencerOne = fencerOne;
+  }
+
+  public Fencer getFencerTwo() {
+    return fencerTwo;
+  }
+
+  public void setFencerTwo(Fencer fencerTwo) {
+    this.fencerTwo = fencerTwo;
+  }
+
+  public Referee getReferee() {
+    return referee;
+  }
+
+  public void setReferee(Referee referee) {
+    this.referee = referee;
+  }
+
+  public List<AssaultOutcome> getAssaultOutcomeList() {
+    return assaultOutcomeList;
+  }
+
+  public void setAssaultOutcomeList(List<AssaultOutcome> assaultOutcomeList) {
+    this.assaultOutcomeList = assaultOutcomeList;
+  }
+
+  public BoutOutcome getBoutOutcome() {
+    return boutOutcome;
+  }
+
+  public void setBoutOutcome(BoutOutcome boutOutcome) {
+    this.boutOutcome = boutOutcome;
+  }
 }

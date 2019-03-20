@@ -26,4 +26,44 @@ public class FencerClubAffiliation {
   private Date startDate;
 
   private Date quitDate;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public Fencer getFencer() {
+    return fencer;
+  }
+
+  public void setFencer(Fencer fencer) {
+    this.fencer = fencer;
+  }
+
+  public Club getClub() {
+    return club;
+  }
+
+  public void setClub(Club club) {
+    this.club = club;
+  }
+
+  public Date getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
+  }
+
+  public Date getQuitDate() {
+    return quitDate;
+  }
+
+  public void setQuitDate(Date quitDate) {
+    this.quitDate = quitDate;
+  }
 }

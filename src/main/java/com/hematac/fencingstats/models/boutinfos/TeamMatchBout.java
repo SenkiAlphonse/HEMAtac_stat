@@ -10,5 +10,11 @@ public class TeamMatchBout extends Bout {
   @JoinColumn(name = "team_match_id")
   private TeamMatch teamMatch;
 
+  public TeamMatch getTeamMatch() {
+    return teamMatch;
+  }
 
+  public void setTeamMatch(TeamMatch teamMatch) {
+    this.teamMatch = teamMatch;
+  }
 }

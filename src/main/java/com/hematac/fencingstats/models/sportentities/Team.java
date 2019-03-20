@@ -17,4 +17,28 @@ public class Team {
 
   @OneToMany(mappedBy = "team")
   private List<CoachTeamAffiliation> coachTeamAffiliationList = new ArrayList<>();
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public List<FencerTeamAffiliation> getFencerTeamAffiliationList() {
+    return fencerTeamAffiliationList;
+  }
+
+  public void setFencerTeamAffiliationList(List<FencerTeamAffiliation> fencerTeamAffiliationList) {
+    this.fencerTeamAffiliationList = fencerTeamAffiliationList;
+  }
+
+  public List<CoachTeamAffiliation> getCoachTeamAffiliationList() {
+    return coachTeamAffiliationList;
+  }
+
+  public void setCoachTeamAffiliationList(List<CoachTeamAffiliation> coachTeamAffiliationList) {
+    this.coachTeamAffiliationList = coachTeamAffiliationList;
+  }
 }

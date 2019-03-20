@@ -33,4 +33,44 @@ public class Event {
       inverseJoinColumns = @JoinColumn(name = "weapon_id")
   )
   private Set<Weapon> weapons = new HashSet<>();
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getCountry() {
+    return country;
+  }
+
+  public void setCountry(String country) {
+    this.country = country;
+  }
+
+  public String getOrganiser() {
+    return organiser;
+  }
+
+  public void setOrganiser(String organiser) {
+    this.organiser = organiser;
+  }
+
+  public Set<Weapon> getWeapons() {
+    return weapons;
+  }
+
+  public void setWeapons(Set<Weapon> weapons) {
+    this.weapons = weapons;
+  }
 }

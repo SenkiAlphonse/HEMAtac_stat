@@ -13,8 +13,30 @@ public class PisteZone {
   @Id
   @GeneratedValue
   private long id;
-
   private FencersOfBout fencerSide;
-
   private ZoneAreas zoneAres;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public FencersOfBout getFencerSide() {
+    return fencerSide;
+  }
+
+  public void setFencerSide(FencersOfBout fencerSide) {
+    this.fencerSide = fencerSide;
+  }
+
+  public ZoneAreas getZoneAres() {
+    return zoneAres;
+  }
+
+  public void setZoneAres(ZoneAreas zoneAres) {
+    this.zoneAres = zoneAres;
+  }
 }

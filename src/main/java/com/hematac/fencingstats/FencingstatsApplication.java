@@ -25,4 +25,19 @@ public class FencingstatsApplication {
     //one-to-one map to sportsentities
     //list of users the user allows access to their data
 
+  //BoutType-ot át kell gndolni
+
+  //modelattribute-ba countrycodes tömb, onnan kell választani és beírni a nationalitybe.
+  //private static String[] countryCodes = Locale.getISOCountries();
+/*  for (String countryCode : countryCodes) {
+
+    Locale obj = new Locale("", countryCode);
+
+    System.out.println("Country Code = " + obj.getCountry()
+        + ", Country Name = " + obj.getDisplayCountry());
+  }*/
+
+  //club-fed mapping
+
+  //enumokba tostring fromstring methods;
 }

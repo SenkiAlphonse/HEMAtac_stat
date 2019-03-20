@@ -27,4 +27,43 @@ public class RefereeCoachAffiliation {
 
   private Date endDate;
 
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Referee getReferee() {
+    return referee;
+  }
+
+  public void setReferee(Referee referee) {
+    this.referee = referee;
+  }
+
+  public Coach getCoach() {
+    return coach;
+  }
+
+  public void setCoach(Coach coach) {
+    this.coach = coach;
+  }
+
+  public Date getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(Date startDate) {
+    this.startDate = startDate;
+  }
+
+  public Date getEndDate() {
+    return endDate;
+  }
+
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
+  }
 }

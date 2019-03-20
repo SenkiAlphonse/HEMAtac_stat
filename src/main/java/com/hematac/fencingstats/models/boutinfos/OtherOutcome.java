@@ -8,4 +8,13 @@ import javax.persistence.Table;
 public class OtherOutcome extends AssaultOutcome {
   private String sideNote;
   //injury, etc.
+
+
+  public String getSideNote() {
+    return sideNote;
+  }
+
+  public void setSideNote(String sideNote) {
+    this.sideNote = sideNote;
+  }
 }

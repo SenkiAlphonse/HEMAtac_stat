@@ -27,4 +27,35 @@ public class Touch extends AssaultOutcome {
 
   private Boolean isFirstAfterBreak;
 
+  public FencingAction getFencingAction() {
+    return fencingAction;
+  }
+
+  public void setFencingAction(FencingAction fencingAction) {
+    this.fencingAction = fencingAction;
+  }
+
+  public PisteZone getPisteZone() {
+    return pisteZone;
+  }
+
+  public void setPisteZone(PisteZone pisteZone) {
+    this.pisteZone = pisteZone;
+  }
+
+  public Target getTarget() {
+    return target;
+  }
+
+  public void setTarget(Target target) {
+    this.target = target;
+  }
+
+  public Boolean getFirstAfterBreak() {
+    return isFirstAfterBreak;
+  }
+
+  public void setFirstAfterBreak(Boolean firstAfterBreak) {
+    isFirstAfterBreak = firstAfterBreak;
+  }
 }

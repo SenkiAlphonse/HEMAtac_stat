@@ -52,4 +52,116 @@ public class User {
       inverseJoinColumns=@JoinColumn(name="studentId")
   )
   private Set<User> isAllowedAccessTo;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getMiddleName() {
+    return middleName;
+  }
+
+  public void setMiddleName(String middleName) {
+    this.middleName = middleName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public String getAboutMe() {
+    return aboutMe;
+  }
+
+  public void setAboutMe(String aboutMe) {
+    this.aboutMe = aboutMe;
+  }
+
+  public Set<Weapon> getAnalyzedWeapons() {
+    return analyzedWeapons;
+  }
+
+  public void setAnalyzedWeapons(Set<Weapon> analyzedWeapons) {
+    this.analyzedWeapons = analyzedWeapons;
+  }
+
+  public Fencer getiAmaFencer() {
+    return iAmaFencer;
+  }
+
+  public void setiAmaFencer(Fencer iAmaFencer) {
+    this.iAmaFencer = iAmaFencer;
+  }
+
+  public Referee getiAmaReferee() {
+    return iAmaReferee;
+  }
+
+  public void setiAmaReferee(Referee iAmaReferee) {
+    this.iAmaReferee = iAmaReferee;
+  }
+
+  public Coach getiAmaCoach() {
+    return iAmaCoach;
+  }
+
+  public void setiAmaCoach(Coach iAmaCoach) {
+    this.iAmaCoach = iAmaCoach;
+  }
+
+  public Set<User> getAllowsAccessTo() {
+    return allowsAccessTo;
+  }
+
+  public void setAllowsAccessTo(Set<User> allowsAccessTo) {
+    this.allowsAccessTo = allowsAccessTo;
+  }
+
+  public Set<User> getIsAllowedAccessTo() {
+    return isAllowedAccessTo;
+  }
+
+  public void setIsAllowedAccessTo(Set<User> isAllowedAccessTo) {
+    this.isAllowedAccessTo = isAllowedAccessTo;
+  }
 }

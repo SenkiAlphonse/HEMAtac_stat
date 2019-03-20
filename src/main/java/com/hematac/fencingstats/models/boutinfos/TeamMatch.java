@@ -23,4 +23,36 @@ public class TeamMatch {
 
   @OneToMany(mappedBy = "teamMatch")
   private List<TeamMatchBout> boutList = new ArrayList<TeamMatchBout>();
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public Team getTeamOne() {
+    return teamOne;
+  }
+
+  public void setTeamOne(Team teamOne) {
+    this.teamOne = teamOne;
+  }
+
+  public Team getTeamTwo() {
+    return teamTwo;
+  }
+
+  public void setTeamTwo(Team teamTwo) {
+    this.teamTwo = teamTwo;
+  }
+
+  public List<TeamMatchBout> getBoutList() {
+    return boutList;
+  }
+
+  public void setBoutList(List<TeamMatchBout> boutList) {
+    this.boutList = boutList;
+  }
 }
