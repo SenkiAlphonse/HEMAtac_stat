@@ -42,4 +42,6 @@ public class FencingstatsApplication {
   //enumokba tostring fromstring methods;
 
   //logger implementation!!!
+
+  //user--fencerId etc verifikáció
 }

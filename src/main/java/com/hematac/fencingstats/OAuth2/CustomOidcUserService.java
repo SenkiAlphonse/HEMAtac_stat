@@ -48,7 +48,7 @@ public class CustomOidcUserService extends OidcUserService {
       user.setUserRole(UserRole.admin);
     } else {
       user.setUserRole(UserRole.user);
-    }
-    userRepository.save(user);*/
+    }*/
+    userRepository.save(user);
   }
 }
