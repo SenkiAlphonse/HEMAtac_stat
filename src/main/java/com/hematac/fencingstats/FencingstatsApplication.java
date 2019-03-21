@@ -40,4 +40,6 @@ public class FencingstatsApplication {
   //club-fed mapping
 
   //enumokba tostring fromstring methods;
+
+  //logger implementation!!!
 }

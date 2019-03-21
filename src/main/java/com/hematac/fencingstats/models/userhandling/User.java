@@ -3,10 +3,8 @@ package com.hematac.fencingstats.models.userhandling;
 import com.hematac.fencingstats.models.sportentities.Coach;
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
-import com.hematac.fencingstats.models.sportentities.Weapon;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,9 +15,11 @@ public class User {
   @GeneratedValue
   private long id;
 
+  private String name;
   private String firstName;
   private String middleName;
   private String lastName;
+  private String imageUrl;
   private String email;
   private String address;
   private String phone;
@@ -60,6 +60,14 @@ public class User {
     this.id = id;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public String getFirstName() {
     return firstName;
   }
@@ -82,6 +90,14 @@ public class User {
 
   public void setLastName(String lastName) {
     this.lastName = lastName;
+  }
+
+  public String getImageUrl() {
+    return imageUrl;
+  }
+
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
   }
 
   public String getEmail() {
