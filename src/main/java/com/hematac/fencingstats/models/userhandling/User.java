@@ -24,7 +24,6 @@ public class User {
   private String address;
   private String phone;
   private String aboutMe;
-  private Set<Weapon> analyzedWeapons = new HashSet<>();
 
   @OneToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "fencer_id")
@@ -115,14 +114,6 @@ public class User {
 
   public void setAboutMe(String aboutMe) {
     this.aboutMe = aboutMe;
-  }
-
-  public Set<Weapon> getAnalyzedWeapons() {
-    return analyzedWeapons;
-  }
-
-  public void setAnalyzedWeapons(Set<Weapon> analyzedWeapons) {
-    this.analyzedWeapons = analyzedWeapons;
   }
 
   public Fencer getiAmaFencer() {

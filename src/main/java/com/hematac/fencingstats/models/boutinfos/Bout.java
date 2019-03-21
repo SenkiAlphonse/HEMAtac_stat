@@ -23,8 +23,12 @@ public abstract class Bout {
 
   private Date date;
 
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "weapon_id")
   private Weapon weapon;
 
+  @ManyToOne
+  @JoinColumn(name = "bout_type_id")
   private BoutType boutType;
 
   //arena size/shape??
@@ -44,7 +48,7 @@ public abstract class Bout {
   @OneToMany(mappedBy = "bout")
   private List<AssaultOutcome> assaultOutcomeList = new ArrayList<>();
 
-  private BoutOutcome boutOutcome;
+  private BoutOutcomes boutOutcome;
 
   public long getId() {
     return id;
@@ -118,11 +122,11 @@ public abstract class Bout {
     this.assaultOutcomeList = assaultOutcomeList;
   }
 
-  public BoutOutcome getBoutOutcome() {
+  public BoutOutcomes getBoutOutcome() {
     return boutOutcome;
   }
 
-  public void setBoutOutcome(BoutOutcome boutOutcome) {
+  public void setBoutOutcome(BoutOutcomes boutOutcome) {
     this.boutOutcome = boutOutcome;
   }
 }

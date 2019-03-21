@@ -1,10 +1,11 @@
 package com.hematac.fencingstats.models.sportentities;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 
+@Entity
+@Table(name = "fencer_team")
 public class FencerTeamAffiliation {
 
   @Id

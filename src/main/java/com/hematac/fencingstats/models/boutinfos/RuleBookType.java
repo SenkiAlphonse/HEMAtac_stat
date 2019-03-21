@@ -2,10 +2,7 @@ package com.hematac.fencingstats.models.boutinfos;
 
 import com.hematac.fencingstats.models.sportentities.Federation;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "rule_book_types")
@@ -15,6 +12,8 @@ public class RuleBookType {
   @GeneratedValue
   private long id;
 
+  @ManyToOne
+  @JoinColumn(name="maintainer_federation_id")
   private Federation maintainerFederation;
   //do i need a mapping here?
 

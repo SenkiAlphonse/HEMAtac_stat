@@ -7,17 +7,19 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "team_matches")
 public class TeamMatch {
 
   @Id
   @GeneratedValue
   private long id;
 
-  @OneToMany(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "team_one_id")
   private Team teamOne;
 
-  @OneToMany(fetch = FetchType.LAZY)
+  @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "team_two_id")
   private Team teamTwo;
 
