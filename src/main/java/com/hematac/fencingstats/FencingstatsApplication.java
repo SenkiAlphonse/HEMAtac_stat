@@ -44,4 +44,6 @@ public class FencingstatsApplication {
   //logger implementation!!!
 
   //user--fencerId etc verifikáció
+
+  //FEncingAction might need child classes, eg. parries --> single, counter, recounter etc, or parry --> of tierze, of seconde, etc.
 }

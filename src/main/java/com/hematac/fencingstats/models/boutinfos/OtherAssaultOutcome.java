@@ -5,10 +5,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "other_outcomes")
-public class OtherOutcome extends AssaultOutcome {
+public class OtherAssaultOutcome extends AssaultOutcome {
   private String sideNote;
-  //injury, etc.
-
+  //injury, losing weapon, falling on face, etc.
 
   public String getSideNote() {
     return sideNote;
