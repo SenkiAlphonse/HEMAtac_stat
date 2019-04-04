@@ -1,9 +1,9 @@
 package com.hematac.fencingstats.models.userhandling;
 
 public enum RoleType {
-  USER("ROLE_USER"),
-  CLUB_ADMIN("ROLE_CLUB_ADMIN"),
-  GLOBAL_ADMIN("ROLE_GLOBAL_ADMIN");
+  USER("USER"),
+  CLUB_ADMIN("CLUB_ADMIN"),
+  GLOBAL_ADMIN("GLOBAL_ADMIN");
 
   private final String roleName;
 

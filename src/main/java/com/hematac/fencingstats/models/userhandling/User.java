@@ -1,11 +1,13 @@
 package com.hematac.fencingstats.models.userhandling;
 
+import com.hematac.fencingstats.dtos.UserDto;
 import com.hematac.fencingstats.models.sportentities.Coach;
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
 
 import javax.persistence.*;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "users")
@@ -180,11 +182,10 @@ public class User {
   public UserDto toUserDto(){
     UserDto userDto = new UserDto();
     userDto.setId(this.id);
+    userDto.setName(this.name);
     userDto.setEmail(this.email);
-    userDto.setFirstName(this.firstName);
-    userDto.setLastName(this.lastName);
-    userDto.setUsername(this.username);
-    userDto.setRole(this.roles.stream().map(role -> role.getName().toString()).collect(Collectors.toList()));
+    userDto.setUserType(this.userType.toString());
+    userDto.setRoles(this.roles.stream().map(role -> role.getType().toString()).collect(Collectors.toList()));
     return userDto;
   }
 }

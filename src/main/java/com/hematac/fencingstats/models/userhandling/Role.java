@@ -1,10 +1,14 @@
 package com.hematac.fencingstats.models.userhandling;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
-@Table(name = "ROLES")
+@Table(name = "roles")
 public class Role {
 
   @Id
@@ -17,14 +21,16 @@ public class Role {
   private RoleType type;
   @Column(name = "description")
   private String description;
+
+  @CreationTimestamp
+  @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "created_on")
-  private Long createdOn;
+  private Date createdOn;
+
+  @UpdateTimestamp
+  @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "modified_on")
-  private Long modifiedOn;
-
-  @OneToMany(fetch = FetchType.EAGER, mappedBy = "role")
-  private Set<User> users;
-
+  private Date modifiedOn;
 
   public RoleType getType() {
     return type;
@@ -50,19 +56,19 @@ public class Role {
     this.id = id;
   }
 
-  public Long getCreatedOn() {
+  public Date getCreatedOn() {
     return createdOn;
   }
 
-  public void setCreatedOn(Long createdOn) {
+  public void setCreatedOn(Date createdOn) {
     this.createdOn = createdOn;
   }
 
-  public Long getModifiedOn() {
+  public Date getModifiedOn() {
     return modifiedOn;
   }
 
-  public void setModifiedOn(Long modifiedOn) {
+  public void setModifiedOn(Date modifiedOn) {
     this.modifiedOn = modifiedOn;
   }
 }
