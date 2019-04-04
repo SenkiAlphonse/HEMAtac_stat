@@ -1,6 +1,6 @@
 package com.hematac.fencingstats.OAuth2;
 
-import com.hematac.fencingstats.dtos.GoogleOAuth2UserInfo;
+import com.hematac.fencingstats.dtos.OAuth2UserInfo;
 import com.hematac.fencingstats.models.userhandling.User;
 import com.hematac.fencingstats.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +26,7 @@ public class CustomOidcUserService extends OidcUserService {
   public OidcUser loadUser(OidcUserRequest userRequest) throws OAuth2AuthenticationException {
     OidcUser oidcUser = super.loadUser(userRequest);
     Map attributes = oidcUser.getAttributes();
-    GoogleOAuth2UserInfo userInfo = new GoogleOAuth2UserInfo();
+    OAuth2UserInfo userInfo = new OAuth2UserInfo();
     userInfo.setEmail((String) attributes.get("email"));
     userInfo.setId((String) attributes.get("sub"));
     userInfo.setImageUrl((String) attributes.get("picture"));
@@ -35,7 +35,7 @@ public class CustomOidcUserService extends OidcUserService {
     return oidcUser;
   }
 
-  protected void updateUser(GoogleOAuth2UserInfo userInfo) {
+  protected void updateUser(OAuth2UserInfo userInfo) {
     User user = userRepository.findByEmail(userInfo.getEmail());
     if (user == null) {
       user = new User();

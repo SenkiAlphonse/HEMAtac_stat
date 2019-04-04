@@ -15,14 +15,19 @@ public class User {
   @GeneratedValue
   private long id;
 
+  private String email;
   private String name;
+  private String imageUrl;
+  private UserType userType;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "User_ROLES",
+      joinColumns =  @JoinColumn(name ="USER_ID"),inverseJoinColumns= @JoinColumn(name="ROLE_ID"))
+  private Set<Role> roles;
+
   private String firstName;
   private String middleName;
   private String lastName;
-  private String imageUrl;
-  private String email;
-  private String address;
-  private String phone;
   private String aboutMe;
 
   @OneToOne(fetch = FetchType.LAZY)
@@ -96,6 +101,14 @@ public class User {
     return imageUrl;
   }
 
+  public Set<Role> getRoles() {
+    return roles;
+  }
+
+  public void setRoles(Set<Role> roles) {
+    this.roles = roles;
+  }
+
   public void setImageUrl(String imageUrl) {
     this.imageUrl = imageUrl;
   }
@@ -106,22 +119,6 @@ public class User {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public String getAddress() {
-    return address;
-  }
-
-  public void setAddress(String address) {
-    this.address = address;
-  }
-
-  public String getPhone() {
-    return phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
   }
 
   public String getAboutMe() {
@@ -170,5 +167,24 @@ public class User {
 
   public void setIsAllowedAccessTo(Set<User> isAllowedAccessTo) {
     this.isAllowedAccessTo = isAllowedAccessTo;
+  }
+
+  public UserType getUserType() {
+    return userType;
+  }
+
+  public void setUserType(UserType userType) {
+    this.userType = userType;
+  }
+
+  public UserDto toUserDto(){
+    UserDto userDto = new UserDto();
+    userDto.setId(this.id);
+    userDto.setEmail(this.email);
+    userDto.setFirstName(this.firstName);
+    userDto.setLastName(this.lastName);
+    userDto.setUsername(this.username);
+    userDto.setRole(this.roles.stream().map(role -> role.getName().toString()).collect(Collectors.toList()));
+    return userDto;
   }
 }
