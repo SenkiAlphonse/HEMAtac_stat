@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "rule_book_types")
-public class RuleBookType {
+public class RuleBook {
 
   @Id
   @GeneratedValue
@@ -29,6 +29,16 @@ public class RuleBookType {
   private float arenaWidthInMetres;
 
   private ArenaShapes arenaShape;
+
+  private String description;
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
   public long getId() {
     return id;

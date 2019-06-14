@@ -2,6 +2,7 @@ package com.hematac.fencingstats.models.actioninfos;
 
 import com.hematac.fencingstats.models.boutinfos.FencersOfBout;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,7 +15,7 @@ public class PisteZone {
   @GeneratedValue
   private long id;
   private FencersOfBout fencerSide;
-  private ZoneAreas zoneAres;
+  private ZoneAreas zoneArea;
 
   public long getId() {
     return id;
@@ -33,10 +34,10 @@ public class PisteZone {
   }
 
   public ZoneAreas getZoneAres() {
-    return zoneAres;
+    return zoneArea;
   }
 
   public void setZoneAres(ZoneAreas zoneAres) {
-    this.zoneAres = zoneAres;
+    this.zoneArea = zoneAres;
   }
 }

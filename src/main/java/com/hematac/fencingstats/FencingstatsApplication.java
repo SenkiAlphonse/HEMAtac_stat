@@ -10,6 +10,11 @@ public class FencingstatsApplication {
     SpringApplication.run(FencingstatsApplication.class, args);
   }
 
+  //BoutType a mérkőzés szintjét jelöli, nem azt, hogy csapatmeccs-e. Azt, hogy pool, vagy DE, esetleg helyezésekért megy, vagy vigaszági. Külön bout class van a team meccsekre és az individual meccsekre.. Repository se kell neki talán... bár...
+
+  //PisteZone: lehet h egyszerűsíteni kéne, mert véges lesz. Saját vagy ellenfél oldala,é és zoneArea. Törölni is lehetne. A találati zónát a touchnál is be lehet jelölni.
+  //Target egyszerűsödjön, enummá, előre meg kell határozni. Fej, külsö belső arc, has, oldal, kéz, comb, lábszár, lábfej. Akció alapján azonosítható a találat további jellege.
+
   //userek tudjanak engedélyt adni más usereknek arra, hogy láthassák az adataikat. Egy ilyen engedély egyirányú kell legyen.
 
   //user fields validation (strings)

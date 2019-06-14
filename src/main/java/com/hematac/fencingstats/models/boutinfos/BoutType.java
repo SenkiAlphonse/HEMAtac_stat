@@ -16,7 +16,7 @@ public class BoutType {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "rulebook_id")
-  private RuleBookType ruleBookType;
+  private RuleBook ruleBook;
 
   private int pointCap;
 
@@ -38,12 +38,12 @@ public class BoutType {
     this.name = name;
   }
 
-  public RuleBookType getRuleBookType() {
-    return ruleBookType;
+  public RuleBook getRuleBook() {
+    return ruleBook;
   }
 
-  public void setRuleBookType(RuleBookType ruleBookType) {
-    this.ruleBookType = ruleBookType;
+  public void setRuleBook(RuleBook ruleBook) {
+    this.ruleBook = ruleBook;
   }
 
   public int getPointCap() {

@@ -1,5 +1,6 @@
 package com.hematac.fencingstats.models.actioninfos;
 
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
