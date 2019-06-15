@@ -1,4 +1,4 @@
-package com.hematac.fencingstats.repository.boutinforepository;
+package com.hematac.fencingstats.repository.sportentityrepository;
 
 import com.hematac.fencingstats.models.sportentities.Weapon;
 import org.springframework.data.repository.CrudRepository;
