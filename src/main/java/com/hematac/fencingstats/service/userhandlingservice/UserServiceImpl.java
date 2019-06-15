@@ -1,4 +1,4 @@
-package com.hematac.fencingstats.service;
+package com.hematac.fencingstats.service.userhandlingservice;
 
 import com.hematac.fencingstats.repository.userhandlingrepository.UserRepository;
 import org.springframework.stereotype.Service;
