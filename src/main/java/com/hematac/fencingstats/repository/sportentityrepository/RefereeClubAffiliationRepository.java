@@ -5,5 +5,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RefereeClubAffiliation extends CrudRepository<Referee, Long> {
+public interface RefereeClubAffiliationRepository extends CrudRepository<Referee, Long> {
 }
