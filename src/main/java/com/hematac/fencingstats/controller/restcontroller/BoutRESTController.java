@@ -5,6 +5,8 @@ import com.hematac.fencingstats.dto.BoutDtoDisplay;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.BoutService;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.IndividualBoutService;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.TeamMatchBoutService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +17,8 @@ import java.util.List;
 
 @RestController
 public class BoutRESTController {
+
+    private static Logger logger = LoggerFactory.getLogger(BoutRESTController.class);
 
     private BoutService boutService;
     private IndividualBoutService individualBoutService;
