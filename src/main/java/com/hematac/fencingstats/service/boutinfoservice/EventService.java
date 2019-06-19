@@ -1,4 +1,4 @@
 package com.hematac.fencingstats.service.boutinfoservice;
 
-public interface AssaultOutcomeService {
+public interface EventService {
 }

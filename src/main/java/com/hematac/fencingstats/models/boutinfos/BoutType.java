@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "bout_types")
 public class BoutType {
+  //make this an enum?
 
   @Id
   @GeneratedValue
