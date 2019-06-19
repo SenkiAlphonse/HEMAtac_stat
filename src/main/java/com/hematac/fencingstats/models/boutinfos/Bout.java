@@ -3,10 +3,13 @@ package com.hematac.fencingstats.models.boutinfos;
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
 import com.hematac.fencingstats.models.sportentities.Weapon;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -21,7 +24,7 @@ public abstract class Bout {
   @JoinColumn(name = "event_id")
   private Event event;
 
-  private Date date;
+  private LocalDateTime dateTimeOfBout;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "weapon_id")
@@ -50,6 +53,16 @@ public abstract class Bout {
 
   private BoutOutcomes boutOutcome;
 
+  @CreationTimestamp
+  @Temporal(TemporalType.DATE)
+  @Column(name = "date_created")
+  private LocalDate dateCreated;
+
+  @UpdateTimestamp
+  @Temporal(TemporalType.TIMESTAMP)
+  @Column(name = "date_modified")
+  private LocalDate dateModified;
+
   public long getId() {
     return id;
   }
@@ -66,12 +79,12 @@ public abstract class Bout {
     this.event = event;
   }
 
-  public Date getDate() {
-    return date;
+  public LocalDateTime getDateTimeOfBout() {
+    return dateTimeOfBout;
   }
 
-  public void setDate(Date date) {
-    this.date = date;
+  public void setDateTimeOfBout(LocalDateTime dateTimeOfBout) {
+    this.dateTimeOfBout = dateTimeOfBout;
   }
 
   public Weapon getWeapon() {

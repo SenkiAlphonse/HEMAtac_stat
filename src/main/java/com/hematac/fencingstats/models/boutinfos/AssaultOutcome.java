@@ -1,6 +1,10 @@
 package com.hematac.fencingstats.models.boutinfos;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "assault_outcomes")
@@ -14,6 +18,18 @@ public abstract class AssaultOutcome {
   private Bout bout;
 
   private FencersOfBout receivedBy;
+
+  private boolean pointWorthy;
+
+  @CreationTimestamp
+  @Temporal(TemporalType.DATE)
+  @Column(name = "date_created")
+  private LocalDate dateCreated;
+
+  @UpdateTimestamp
+  @Temporal(TemporalType.TIMESTAMP)
+  @Column(name = "date_modified")
+  private LocalDate dateModified;
 
   public long getId() {
     return id;
@@ -37,5 +53,13 @@ public abstract class AssaultOutcome {
 
   public void setReceivedBy(FencersOfBout receivedBy) {
     this.receivedBy = receivedBy;
+  }
+
+  public boolean isPointWorthy() {
+    return pointWorthy;
+  }
+
+  public void setPointWorthy(boolean pointWorthy) {
+    this.pointWorthy = pointWorthy;
   }
 }

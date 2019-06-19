@@ -4,8 +4,11 @@ import com.hematac.fencingstats.models.sportentities.Coach;
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
 import com.hematac.fencingstats.models.sportentities.Weapon;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -51,6 +54,16 @@ public class User {
       inverseJoinColumns=@JoinColumn(name="studentId")
   )
   private Set<User> isAllowedAccessTo;
+
+  @CreationTimestamp
+  @Temporal(TemporalType.DATE)
+  @Column(name = "date_created")
+  private LocalDate dateCreated;
+
+  @UpdateTimestamp
+  @Temporal(TemporalType.TIMESTAMP)
+  @Column(name = "date_modified")
+  private LocalDate dateModified;
 
   public long getId() {
     return id;

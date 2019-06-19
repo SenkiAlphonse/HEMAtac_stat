@@ -1,8 +1,12 @@
 package com.hematac.fencingstats.models.sportentities;
 
 import com.hematac.fencingstats.models.userhandling.User;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Locale;
 
@@ -13,6 +17,9 @@ public class Fencer {
   @Id
   @GeneratedValue
   private long id;
+
+  @NotNull(message = "Fencer's name is required")
+  private String name;
 
   private Locale nationality;
 
@@ -34,12 +41,30 @@ public class Fencer {
       fetch = FetchType.LAZY)
   private User user;
 
+  @CreationTimestamp
+  @Temporal(TemporalType.DATE)
+  @Column(name = "date_created")
+  private LocalDate dateCreated;
+
+  @UpdateTimestamp
+  @Temporal(TemporalType.TIMESTAMP)
+  @Column(name = "date_modified")
+  private LocalDate dateModified;
+
   public long getId() {
     return id;
   }
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public Locale getNationality() {
