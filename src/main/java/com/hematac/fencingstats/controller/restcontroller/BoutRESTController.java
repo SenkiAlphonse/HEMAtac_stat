@@ -34,7 +34,7 @@ public class BoutRESTController {
     @GetMapping("/api/bouts")
     public ResponseEntity<List<BoutDtoDisplay>> products() {
         List<BoutDtoDisplay> boutDtos = boutService.getDtosFromEntities(boutService.getAll());
-        if (boutDtos != null || !boutDtos.isEmpty()) {
+        if (boutDtos != null) {
             return new ResponseEntity<>(boutDtos, HttpStatus.OK);
         }
         throw new InternalServerErrorEx("Can't find bouts");

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:include="fragment/head :: head"></div>
+    <title id="title">Items</title>
+</head>
+<body>
+<div th:replace="fragment/navbar :: nav"></div>
+
+<div class="container">
+    <!----------------------Items table------------------------------------->
+    <table>
+        <thead>
+        <tr>
+            <th scope="col"><h3>Fencer 1</h3></th>
+            <th scope="col"><h3>Fencer 1 score</h3></th>
+            <th scope="col"><h3>Fencer 2 score</h3></th>
+            <th scope="col"><h3>Fencer 2</h3></th>
+            <th scope="col"><h3>Event</h3></th>
+            <th scope="col"><h3>Date</h3></th>
+        </tr>
+        </thead>
+        <div th:each="bout : ${bouts}">
+            <tr>
+                <td data-label="fencer_1">
+                    <p th:text="${bout.fencerOneName}"></p>
+                </td>
+                <td data-label="fencer_1_score">
+                    <p th:text="${bout.fencerOneScore}"></p>
+                </td>
+                <td data-label="fencer_2_score">
+                    <p th:text="${bout.fencerTwoScore}"></p>
+                </td>
+                <td data-label="fencer_2">
+                    <p th:text="${bout.fencerTwoName}"></p>
+                </td>
+                <td data-label="event">
+                    <p th:text="${bout.event}"></p>
+                </td>
+                <td data-label="date">
+                    <p th:text="${bout.date}"></p>
+                </td>
+            </tr>
+        </div>
+    </table>
+</div>
+</body>
+</html>

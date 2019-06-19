@@ -21,16 +21,6 @@ public abstract class AssaultOutcome {
 
   private boolean pointWorthy;
 
-  @CreationTimestamp
-  @Temporal(TemporalType.DATE)
-  @Column(name = "date_created")
-  private LocalDate dateCreated;
-
-  @UpdateTimestamp
-  @Temporal(TemporalType.TIMESTAMP)
-  @Column(name = "date_modified")
-  private LocalDate dateModified;
-
   public long getId() {
     return id;
   }

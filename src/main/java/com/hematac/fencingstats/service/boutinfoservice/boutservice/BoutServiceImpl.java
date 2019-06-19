@@ -40,20 +40,26 @@ public class BoutServiceImpl implements BoutService {
         boutDto.fencerOneName = bout.getFencerOne().getName();
         boutDto.fencerTwoName = bout.getFencerTwo().getName();
 
-        boutDto.fencerOneScore = bout.getAssaultOutcomeList().stream().filter(t ->
-                t.isPointWorthy()
-                        && (t.getReceivedBy().equals(FencersOfBout.FENCER_TWO)
+        if(bout.getAssaultOutcomeList() != null && !bout.getAssaultOutcomeList().isEmpty()) {
+            boutDto.fencerOneScore = bout.getAssaultOutcomeList().stream().filter(t ->
+                    t.isPointWorthy()
+                            && (t.getReceivedBy().equals(FencersOfBout.FENCER_TWO)
                             || t.getReceivedBy().equals(FencersOfBout.BOTH)))
-                .count();
-        boutDto.fencerTwoScore = bout.getAssaultOutcomeList().stream().filter(t ->
-                t.isPointWorthy()
-                        && (t.getReceivedBy().equals(FencersOfBout.FENCER_ONE)
+                    .count();
+            boutDto.fencerTwoScore = bout.getAssaultOutcomeList().stream().filter(t ->
+                    t.isPointWorthy()
+                            && (t.getReceivedBy().equals(FencersOfBout.FENCER_ONE)
                             || t.getReceivedBy().equals(FencersOfBout.BOTH)))
-                .count();
+                    .count();
+        }
 
-        boutDto.event = bout.getEvent().getName();
+        if(bout.getEvent() != null) {
+            boutDto.event = bout.getEvent().getName();
+        }
 
-        boutDto.date = bout.getDateTimeOfBout().toString();
+        if(bout.getDateTimeOfBout() != null) {
+            boutDto.date = bout.getDateTimeOfBout().toString();
+        }
 
         return boutDto;
     }

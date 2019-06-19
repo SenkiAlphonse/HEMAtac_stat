@@ -1,5 +1,6 @@
 package com.hematac.fencingstats.service.boutinfoservice.boutservice;
 
+import com.hematac.fencingstats.models.boutinfos.IndividualBout;
 import com.hematac.fencingstats.repository.boutinforepository.boutrepository.BoutRepository;
 import com.hematac.fencingstats.repository.boutinforepository.boutrepository.IndividualBoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,5 +16,10 @@ public class IndividualBoutServiceImpl implements IndividualBoutService {
     public IndividualBoutServiceImpl(IndividualBoutRepository individualBoutRepository, BoutRepository boutRepository){
         this.individualBoutRepository = individualBoutRepository;
         this.boutRepository = boutRepository;
+    }
+
+    @Override
+    public void save(IndividualBout individualBout) {
+        individualBoutRepository.save(individualBout);
     }
 }

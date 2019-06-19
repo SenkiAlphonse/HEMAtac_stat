@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "appusers")
 public class User {
 
   @Id
@@ -54,16 +54,6 @@ public class User {
       inverseJoinColumns=@JoinColumn(name="studentId")
   )
   private Set<User> isAllowedAccessTo;
-
-  @CreationTimestamp
-  @Temporal(TemporalType.DATE)
-  @Column(name = "date_created")
-  private LocalDate dateCreated;
-
-  @UpdateTimestamp
-  @Temporal(TemporalType.TIMESTAMP)
-  @Column(name = "date_modified")
-  private LocalDate dateModified;
 
   public long getId() {
     return id;

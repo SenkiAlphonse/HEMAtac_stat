@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "red_cards")
 public class RedCard extends AssaultOutcome {
   private String sideNote;
 

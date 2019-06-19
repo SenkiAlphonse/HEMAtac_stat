@@ -16,7 +16,6 @@ sourceCompatibility = '1.8'
 dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.2.Final'
     compile('org.springframework.boot:spring-boot-starter-web')
