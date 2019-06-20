@@ -5,6 +5,7 @@ import com.hematac.fencingstats.models.boutinfos.Bout;
 import com.hematac.fencingstats.models.boutinfos.FencersOfBout;
 import com.hematac.fencingstats.repository.boutinforepository.boutrepository.BoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -22,8 +23,18 @@ public class BoutServiceImpl implements BoutService {
     }
 
     @Override
-    public List<Bout> getAll() {
+    public List<Bout> getAll(){
         return boutRepository.findAll();
+    }
+
+    @Override
+    public List<Bout> getAll(int pageId) {
+        return boutRepository.findAllByOrderByDateTimeOfBoutDesc(PageRequest.of(pageId, 3));
+    }
+
+    @Override
+    public List<Bout> getAll(String nameFilter, int pageId) {
+        return boutRepository.findAllByFencerOneNameContainsOrFencerTwoNameContainsOrderByDateTimeOfBoutDesc(nameFilter, PageRequest.of(pageId, 3));
     }
 
     @Override

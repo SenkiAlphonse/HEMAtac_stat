@@ -19,14 +19,33 @@ public class IndividualBoutController {
         this.fencerService = fencerService;
 
         IndividualBout individualBoutDummy1 = new IndividualBout();
+        IndividualBout individualBoutDummy2 = new IndividualBout();
+        IndividualBout individualBoutDummy3 = new IndividualBout();
+        IndividualBout individualBoutDummy4 = new IndividualBout();
         Fencer fencerJoe = new Fencer();
         fencerJoe.setName("fencerJoe");
         Fencer fencerJane = new Fencer();
         fencerJane.setName("fencerJane");
+        Fencer fencerMartha = new Fencer();
+        fencerMartha.setName("fencerMartha");
+        Fencer fencerAlphonse = new Fencer();
+        fencerAlphonse.setName("fencerAlphonse");
         fencerService.save(fencerJoe);
         fencerService.save(fencerJane);
+        fencerService.save(fencerMartha);
+        fencerService.save(fencerAlphonse);
+
         individualBoutDummy1.setFencerOne(fencerJoe);
         individualBoutDummy1.setFencerTwo(fencerJane);
+        individualBoutDummy2.setFencerOne(fencerMartha);
+        individualBoutDummy2.setFencerTwo(fencerJane);
+        individualBoutDummy3.setFencerOne(fencerJoe);
+        individualBoutDummy3.setFencerTwo(fencerMartha);
+        individualBoutDummy4.setFencerOne(fencerAlphonse);
+        individualBoutDummy4.setFencerTwo(fencerMartha);
         individualBoutService.save(individualBoutDummy1);
+        individualBoutService.save(individualBoutDummy2);
+        individualBoutService.save(individualBoutDummy3);
+        individualBoutService.save(individualBoutDummy4);
     }
 }
