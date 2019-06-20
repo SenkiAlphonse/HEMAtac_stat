@@ -25,19 +25,23 @@ public class BoutController {
     public String displayBouts(Model model,
                                @RequestParam(name = "pageid", required = false, defaultValue = "0") int pageId,
                                @RequestParam(name = "fencername", required = false)String fencerName) {
-        List<Bout> peekPage = boutService.getAll(pageId + 1);
-        model.addAttribute("islastpage", peekPage.size() == 0);
+
+
         model.addAttribute("pageid", pageId);
 
         if (fencerName == null) {
+            List<Bout> peekPage = boutService.getAll(pageId + 1);
+            model.addAttribute("islastpage", peekPage.size() == 0);
             model.addAttribute("bouts", boutService.getDtosFromEntities(boutService.getAll(pageId)));
         }
         else{
-            List<Bout> filteredBouts= boutService.getAll(fencerName, pageId);
+            List<Bout> peekPage = boutService.getAll(fencerName, pageId + 1);
+            model.addAttribute("islastpage", peekPage.size() == 0);
+            List<Bout> filteredBouts = boutService.getAll(fencerName, pageId);
 /*                    .stream()
                     .filter(b -> b.getFencerOne().getName().toLowerCase().contains(fencerName)
-                                || b.getFencerTwo().getName().toLowerCase().contains(fencerName)).collect(Collectors.toList());
-            model.addAttribute("bouts", boutService.getDtosFromEntities(filteredBouts));*/
+                                || b.getFencerTwo().getName().toLowerCase().contains(fencerName)).collect(Collectors.toList());*/
+            model.addAttribute("bouts", boutService.getDtosFromEntities(filteredBouts));
         }
         return "bouts";
     }

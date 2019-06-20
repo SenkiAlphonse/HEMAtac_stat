@@ -34,7 +34,12 @@ public class BoutServiceImpl implements BoutService {
 
     @Override
     public List<Bout> getAll(String nameFilter, int pageId) {
-        return boutRepository.findAllByFencerOneNameContainsOrFencerTwoNameContainsOrderByDateTimeOfBoutDesc(nameFilter, PageRequest.of(pageId, 3));
+        return boutRepository.findByFencerOne_NameContainingOrFencerTwo_NameContainingAllIgnoreCase(nameFilter, nameFilter, PageRequest.of(pageId, 3));
+    }
+
+    @Override
+    public List<Bout> getAll(String nameFilter1, String nameFilter2, int pageId) {
+        return boutRepository.findByFencerOne_NameContainingOrFencerTwo_NameContainingAllIgnoreCase(nameFilter1, nameFilter2, PageRequest.of(pageId, 3));
     }
 
     @Override
