@@ -7,6 +7,9 @@ import java.util.List;
 
 public interface BoutService {
     List<Bout> getAll();
+    List<Bout> getAll(int pageId);
+    List<Bout> getAll(String nameFilter, int pageId);
+    List<Bout> getAll(String nameFilter1, String nameFilter2, int pageId);
     Bout getById(long id);
     BoutDtoDisplay getDtoFromEntity(Bout bout);
     List<BoutDtoDisplay> getDtosFromEntities(List<Bout> bouts);
