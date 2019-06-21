@@ -1,5 +1,6 @@
 package com.hematac.fencingstats.models.sportentities;
 
+import com.hematac.fencingstats.models.boutinfos.Bout;
 import com.hematac.fencingstats.models.userhandling.User;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -7,8 +8,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Set;
 
 @Entity
 @Table(name = "fencers")
@@ -36,6 +39,9 @@ public class Fencer {
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
   private List<FencerTeamAffiliation> fencerTeamAffiliationHistory;
+
+  @ManyToMany(mappedBy = "fencers")
+  private Set<Bout> bouts = new HashSet<>();
 
   @OneToOne(mappedBy = "iAmaFencer", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)

@@ -1,9 +1,5 @@
 package com.hematac.fencingstats.dto;
 
-//FencerDto etc should be created, and this dto should convey all necessary information, lists, scores, etc.
-//fencers, events, etc. should be objects too, later.
-// moer identifying fields needed.
-
 public class BoutDtoDisplay {
 
     public long id;
