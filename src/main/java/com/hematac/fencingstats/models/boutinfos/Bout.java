@@ -3,11 +3,8 @@ package com.hematac.fencingstats.models.boutinfos;
 import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.models.sportentities.Referee;
 import com.hematac.fencingstats.models.sportentities.Weapon;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -31,8 +28,8 @@ public abstract class Bout {
   private Weapon weapon;
 
   @ManyToOne
-  @JoinColumn(name = "bout_type_id")
-  private BoutType boutType;
+  @JoinColumn(name = "bout_scheme_id")
+  private BoutScheme boutScheme;
 
   //arena size/shape??
 
@@ -85,12 +82,12 @@ public abstract class Bout {
     this.weapon = weapon;
   }
 
-  public BoutType getBoutType() {
-    return boutType;
+  public BoutScheme getBoutScheme() {
+    return boutScheme;
   }
 
-  public void setBoutType(BoutType boutType) {
-    this.boutType = boutType;
+  public void setBoutScheme(BoutScheme boutScheme) {
+    this.boutScheme = boutScheme;
   }
 
   public Fencer getFencerOne() {

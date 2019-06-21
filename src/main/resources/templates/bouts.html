@@ -41,6 +41,8 @@
             <th scope="col"><h3>Fencer 2</h3></th>
             <th scope="col"><h3>Event</h3></th>
             <th scope="col"><h3>Date</h3></th>
+            <th scope="col"><h3>Type</h3></th>
+            <th scope="col"><h3>Scheme</h3></th>
         </tr>
         </thead>
         <div th:each="bout : ${bouts}">
@@ -62,6 +64,12 @@
                 </td>
                 <td data-label="date">
                     <p th:text="${bout.date}"></p>
+                </td>
+                <td data-label="type">
+                    <p th:text="${bout.boutType}"></p>
+                </td>
+                <td data-label="scheme">
+                    <p th:text="${bout.boutScheme}"></p>
                 </td>
             </tr>
         </div>

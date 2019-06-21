@@ -55,6 +55,11 @@ public class BoutServiceImpl implements BoutService {
 
         boutDto.fencerOneName = bout.getFencerOne().getName();
         boutDto.fencerTwoName = bout.getFencerTwo().getName();
+        boutDto.boutType = bout.getClass().getSimpleName().equals("IndividualBout") ? "Individual":"Team";
+
+        if (bout.getBoutScheme() != null){
+            boutDto.boutScheme = bout.getBoutScheme().getName();
+        }
 
         if(bout.getAssaultOutcomeList() != null && !bout.getAssaultOutcomeList().isEmpty()) {
             boutDto.fencerOneScore = bout.getAssaultOutcomeList().stream().filter(t ->

@@ -8,6 +8,8 @@ public class BoutDtoDisplay {
 
     public long id;
 
+    public String boutType;
+    public String boutScheme;
     public String fencerOneName;
     public String fencerTwoName;
 
