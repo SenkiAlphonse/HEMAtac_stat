@@ -6,8 +6,8 @@ public class BoutDtoDisplay {
 
     public String boutType;
     public String boutScheme;
-    public String fencerOneName;
-    public String fencerTwoName;
+    public FencerDtoDisplay fencerOne;
+    public FencerDtoDisplay fencerTwo;
 
     public long fencerOneScore;
     public long fencerTwoScore;
