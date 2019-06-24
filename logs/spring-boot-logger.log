@@ -20539,3 +20539,8 @@ Using generated security password: f75437f1-1d4f-42a7-b5c1-aa79f4bf2d04
 2019-06-24 14:12:01,169 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Initializing Servlet 'dispatcherServlet'
 2019-06-24 14:12:01,180 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8081-exec-1] Completed initialization in 11 ms
 2019-06-24 14:12:01,388 WARN org.apache.juli.logging.DirectJDKLog [http-nio-8081-exec-1] Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [162] milliseconds.
+2019-06-24 14:23:02,148 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [Thread-8] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-06-24 14:23:02,155 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-8] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-06-24 14:23:02,156 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [Thread-8] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2019-06-24 14:23:03,572 INFO com.zaxxer.hikari.HikariDataSource [Thread-8] HikariPool-1 - Shutdown initiated...
+2019-06-24 14:23:03,602 INFO com.zaxxer.hikari.HikariDataSource [Thread-8] HikariPool-1 - Shutdown completed.
