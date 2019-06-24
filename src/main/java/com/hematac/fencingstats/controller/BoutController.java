@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 public class BoutController {
@@ -26,7 +25,6 @@ public class BoutController {
                                @RequestParam(name = "pageid", required = false, defaultValue = "0") int pageId,
                                @RequestParam(name = "fencername", required = false)String fencerName) {
 
-
         model.addAttribute("pageid", pageId);
 
         if (fencerName == null) {
@@ -38,9 +36,6 @@ public class BoutController {
             List<Bout> peekPage = boutService.getAll(fencerName, pageId + 1);
             model.addAttribute("islastpage", peekPage.size() == 0);
             List<Bout> filteredBouts = boutService.getAll(fencerName, pageId);
-/*                    .stream()
-                    .filter(b -> b.getFencerOne().getName().toLowerCase().contains(fencerName)
-                                || b.getFencerTwo().getName().toLowerCase().contains(fencerName)).collect(Collectors.toList());*/
             model.addAttribute("bouts", boutService.getDtosFromEntities(filteredBouts));
         }
         return "bouts";

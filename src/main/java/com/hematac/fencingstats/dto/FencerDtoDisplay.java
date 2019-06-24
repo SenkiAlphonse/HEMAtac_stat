@@ -6,7 +6,7 @@ public class FencerDtoDisplay {
     public String lastCoach;
     public String nationality;
     public String handedness;
-    private String lastClub;
-    private String lastTeam;
+    public String lastClub;
+    public String lastTeam;
 
 }

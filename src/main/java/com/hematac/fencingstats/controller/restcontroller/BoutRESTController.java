@@ -1,6 +1,6 @@
 package com.hematac.fencingstats.controller.restcontroller;
 
-import com.hematac.fencingstats.customexception.runtimeexception.InternalServerErrorEx;
+import com.hematac.fencingstats.exception.runtimeexception.InternalServerErrorException;
 import com.hematac.fencingstats.dto.BoutDtoDisplay;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.BoutService;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.IndividualBoutService;
@@ -37,6 +37,6 @@ public class BoutRESTController {
         if (boutDtos != null) {
             return new ResponseEntity<>(boutDtos, HttpStatus.OK);
         }
-        throw new InternalServerErrorEx("Can't find bouts");
+        throw new InternalServerErrorException("Can't find bouts");
     }
 }

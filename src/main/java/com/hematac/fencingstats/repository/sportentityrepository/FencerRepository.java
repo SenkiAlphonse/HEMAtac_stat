@@ -15,5 +15,5 @@ public interface FencerRepository extends PagingAndSortingRepository<Fencer, Lon
     Fencer findById(long id);
 
     List<Fencer> findAllByOrderByNameAsc(Pageable pageable);
-    List<Fencer> findAllByNameContainingOrderByNationalityAsc(Pageable pageable);
+    List<Fencer> findAllByNameContainingOrderByNationalityAsc(String nameFilter, Pageable pageable);
 }
