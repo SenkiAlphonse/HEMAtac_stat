@@ -1,10 +1,10 @@
 package com.hematac.fencingstats.models.boutinfos;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import com.hematac.fencingstats.models.sportentities.Fencer;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "assault_outcomes")
@@ -17,7 +17,12 @@ public abstract class AssaultOutcome {
   @JoinColumn(name = "bout_id")
   private Bout bout;
 
-  private FencersOfBout receivedBy;
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "assault_outcome_fencer",
+          joinColumns = @JoinColumn(name = "outcome_id"),
+          inverseJoinColumns = @JoinColumn(name = "receiving_fencer_id")
+  )
+  private Set<Fencer> receivingFencers = new HashSet<>();
 
   private boolean pointWorthy;
 
@@ -37,12 +42,12 @@ public abstract class AssaultOutcome {
     this.bout = bout;
   }
 
-  public FencersOfBout getReceivedBy() {
-    return receivedBy;
+  public Set<Fencer> getReceivingFencers() {
+    return receivingFencers;
   }
 
-  public void setReceivedBy(FencersOfBout receivedBy) {
-    this.receivedBy = receivedBy;
+  public void setReceivingFencers(Set<Fencer> receivingFencers) {
+    this.receivingFencers = receivingFencers;
   }
 
   public boolean isPointWorthy() {

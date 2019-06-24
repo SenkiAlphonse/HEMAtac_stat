@@ -3,12 +3,14 @@ package com.hematac.fencingstats.service.boutinfoservice.boutservice;
 import com.hematac.fencingstats.dto.BoutDtoDisplay;
 import com.hematac.fencingstats.models.boutinfos.Bout;
 import com.hematac.fencingstats.models.boutinfos.FencersOfBout;
+import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.repository.boutinforepository.boutrepository.BoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -34,12 +36,12 @@ public class BoutServiceImpl implements BoutService {
 
     @Override
     public List<Bout> getAll(String nameFilter, int pageId) {
-        return boutRepository.findByFencerOne_NameContainingOrFencerTwo_NameContainingAllIgnoreCase(nameFilter, nameFilter, PageRequest.of(pageId, 3));
+        return boutRepository.findDistinctByFencers_NameContainingIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter, PageRequest.of(pageId, 3));
     }
 
     @Override
     public List<Bout> getAll(String nameFilter1, String nameFilter2, int pageId) {
-        return boutRepository.findByFencerOne_NameContainingOrFencerTwo_NameContainingAllIgnoreCase(nameFilter1, nameFilter2, PageRequest.of(pageId, 3));
+        return boutRepository.findDistinctByFencers_NameContainingAndFencers_NameContainingAllIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter1, nameFilter2, PageRequest.of(pageId, 3));
     }
 
     @Override
@@ -53,8 +55,13 @@ public class BoutServiceImpl implements BoutService {
 
         boutDto.id = bout.getId();
 
-        boutDto.fencerOneName = bout.getFencerOne().getName();
-        boutDto.fencerTwoName = bout.getFencerTwo().getName();
+        Fencer[] fencers = bout.getFencers().toArray(new Fencer[2]);
+
+        if (!Arrays.asList(fencers).contains(null)) {
+            boutDto.fencerOneName = fencers[0].getName();
+            boutDto.fencerTwoName = fencers[1].getName();
+        }
+
         boutDto.boutType = bout.getClass().getSimpleName().equals("IndividualBout") ? "Individual":"Team";
 
         if (bout.getBoutScheme() != null){
@@ -63,15 +70,9 @@ public class BoutServiceImpl implements BoutService {
 
         if(bout.getAssaultOutcomeList() != null && !bout.getAssaultOutcomeList().isEmpty()) {
             boutDto.fencerOneScore = bout.getAssaultOutcomeList().stream().filter(t ->
-                    t.isPointWorthy()
-                            && (t.getReceivedBy().equals(FencersOfBout.FENCER_TWO)
-                            || t.getReceivedBy().equals(FencersOfBout.BOTH)))
-                    .count();
+                    t.isPointWorthy() && (t.getReceivingFencers().contains(fencers[1]))).count();
             boutDto.fencerTwoScore = bout.getAssaultOutcomeList().stream().filter(t ->
-                    t.isPointWorthy()
-                            && (t.getReceivedBy().equals(FencersOfBout.FENCER_ONE)
-                            || t.getReceivedBy().equals(FencersOfBout.BOTH)))
-                    .count();
+                    t.isPointWorthy() && (t.getReceivingFencers().contains(fencers[0]))).count();
         }
 
         if(bout.getEvent() != null) {
