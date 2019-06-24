@@ -1,5 +1,7 @@
 package com.hematac.fencingstats.models.sportentities;
 
+import com.hematac.fencingstats.models.boutinfos.AssaultOutcome;
+import com.hematac.fencingstats.models.boutinfos.Bout;
 import com.hematac.fencingstats.models.userhandling.User;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -7,8 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @Entity
 @Table(name = "fencers")
@@ -27,15 +28,21 @@ public class Fencer {
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
-  private List<FencerClubAffiliation> fencerClubAffiliationHistory;
+  private List<FencerClubAffiliation> fencerClubAffiliationHistory = new ArrayList<>();
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
-  private List<FencerCoachAffiliation> fencerCoachAffiliationHistory;
+  private List<FencerCoachAffiliation> fencerCoachAffiliationHistory = new ArrayList<>();
 
   @OneToMany(mappedBy = "fencer",
       cascade = CascadeType.REMOVE)
-  private List<FencerTeamAffiliation> fencerTeamAffiliationHistory;
+  private List<FencerTeamAffiliation> fencerTeamAffiliationHistory = new ArrayList<>();
+
+  @ManyToMany(mappedBy = "fencers")
+  private Set<Bout> bouts = new HashSet<>();
+
+  @ManyToMany(mappedBy = "receivingFencers")
+  private Set<AssaultOutcome> assaultOutcomesReceived = new HashSet<>();
 
   @OneToOne(mappedBy = "iAmaFencer", cascade = CascadeType.ALL,
       fetch = FetchType.LAZY)
@@ -103,5 +110,21 @@ public class Fencer {
 
   public void setUser(User user) {
     this.user = user;
+  }
+
+  public Set<Bout> getBouts() {
+    return bouts;
+  }
+
+  public void setBouts(Set<Bout> bouts) {
+    this.bouts = bouts;
+  }
+
+  public Set<AssaultOutcome> getAssaultOutcomesReceived() {
+    return assaultOutcomesReceived;
+  }
+
+  public void setAssaultOutcomesReceived(Set<AssaultOutcome> assaultOutcomesReceived) {
+    this.assaultOutcomesReceived = assaultOutcomesReceived;
   }
 }

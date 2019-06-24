@@ -32,7 +32,7 @@ public class BoutRESTController {
     }
 
     @GetMapping("/api/bouts")
-    public ResponseEntity<List<BoutDtoDisplay>> products() {
+    public ResponseEntity<List<BoutDtoDisplay>> getAllBouts() {
         List<BoutDtoDisplay> boutDtos = boutService.getDtosFromEntities(boutService.getAll());
         if (boutDtos != null) {
             return new ResponseEntity<>(boutDtos, HttpStatus.OK);

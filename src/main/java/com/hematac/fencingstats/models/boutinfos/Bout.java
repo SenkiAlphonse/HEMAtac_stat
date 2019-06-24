@@ -7,7 +7,9 @@ import com.hematac.fencingstats.models.sportentities.Weapon;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "bouts")
@@ -32,14 +34,15 @@ public abstract class Bout {
   private BoutScheme boutScheme;
 
   //arena size/shape??
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "bout_fencer",
+          joinColumns = @JoinColumn(name = "bout_id"),
+          inverseJoinColumns = @JoinColumn(name = "fencer_id")
+  )
+  private Set<Fencer> fencers = new HashSet<>();
 
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencer_one_id")
-  private Fencer fencerOne;
-
-  @ManyToOne(fetch = FetchType.LAZY)
-  @JoinColumn(name = "fencer_two_id")
-  private Fencer fencerTwo;
+  @OneToMany(mappedBy="bout")
+  private List<AssaultOutcome> assaultOutcomes = new ArrayList<>();
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "referee_id")
@@ -74,6 +77,22 @@ public abstract class Bout {
     this.dateTimeOfBout = dateTimeOfBout;
   }
 
+  public Set<Fencer> getFencers() {
+    return fencers;
+  }
+
+  public void setFencers(Set<Fencer> fencers) {
+    this.fencers = fencers;
+  }
+
+  public List<AssaultOutcome> getAssaultOutcomes() {
+    return assaultOutcomes;
+  }
+
+  public void setAssaultOutcomes(List<AssaultOutcome> assaultOutcomes) {
+    this.assaultOutcomes = assaultOutcomes;
+  }
+
   public Weapon getWeapon() {
     return weapon;
   }
@@ -88,22 +107,6 @@ public abstract class Bout {
 
   public void setBoutScheme(BoutScheme boutScheme) {
     this.boutScheme = boutScheme;
-  }
-
-  public Fencer getFencerOne() {
-    return fencerOne;
-  }
-
-  public void setFencerOne(Fencer fencerOne) {
-    this.fencerOne = fencerOne;
-  }
-
-  public Fencer getFencerTwo() {
-    return fencerTwo;
-  }
-
-  public void setFencerTwo(Fencer fencerTwo) {
-    this.fencerTwo = fencerTwo;
   }
 
   public Referee getReferee() {
