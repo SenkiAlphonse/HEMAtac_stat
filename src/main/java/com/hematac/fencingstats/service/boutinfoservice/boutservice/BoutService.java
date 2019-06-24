@@ -1,6 +1,5 @@
 package com.hematac.fencingstats.service.boutinfoservice.boutservice;
 
-import com.hematac.fencingstats.dto.BoutDtoDisplay;
 import com.hematac.fencingstats.models.boutinfos.Bout;
 
 import java.util.List;
