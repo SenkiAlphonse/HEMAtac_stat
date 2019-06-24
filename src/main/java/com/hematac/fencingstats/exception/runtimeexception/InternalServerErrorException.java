@@ -1,10 +1,10 @@
-package com.hematac.fencingstats.customexception.runtimeexception;
+package com.hematac.fencingstats.exception.runtimeexception;
 
-public class InternalServerErrorEx extends RuntimeException {
+public class InternalServerErrorException extends RuntimeException {
 
     private String message;
 
-    public InternalServerErrorEx(String message) {
+    public InternalServerErrorException(String message) {
         this.message = message;
     }
 

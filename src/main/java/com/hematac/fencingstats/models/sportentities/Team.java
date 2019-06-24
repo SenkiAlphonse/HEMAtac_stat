@@ -12,6 +12,8 @@ public class Team {
   @GeneratedValue
   private long id;
 
+  private String name;
+
   @OneToMany(mappedBy = "team")
   private List<FencerTeamAffiliation> fencerTeamAffiliationList = new ArrayList<>();
 
@@ -24,6 +26,14 @@ public class Team {
 
   public void setId(long id) {
     this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
   }
 
   public List<FencerTeamAffiliation> getFencerTeamAffiliationList() {

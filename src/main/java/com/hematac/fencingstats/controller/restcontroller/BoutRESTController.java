@@ -1,7 +1,8 @@
 package com.hematac.fencingstats.controller.restcontroller;
 
-import com.hematac.fencingstats.customexception.runtimeexception.InternalServerErrorEx;
+import com.hematac.fencingstats.exception.runtimeexception.InternalServerErrorException;
 import com.hematac.fencingstats.dto.BoutDtoDisplay;
+import com.hematac.fencingstats.service.DtoService;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.BoutService;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.IndividualBoutService;
 import com.hematac.fencingstats.service.boutinfoservice.boutservice.TeamMatchBoutService;
@@ -23,20 +24,22 @@ public class BoutRESTController {
     private BoutService boutService;
     private IndividualBoutService individualBoutService;
     private TeamMatchBoutService teamMatchBoutService;
+    private DtoService dtoService;
 
     @Autowired
-    public BoutRESTController(BoutService boutService, IndividualBoutService individualBoutService, TeamMatchBoutService teamMatchBoutService){
+    public BoutRESTController(BoutService boutService, IndividualBoutService individualBoutService, TeamMatchBoutService teamMatchBoutService, DtoService dtoService){
         this.boutService = boutService;
         this.individualBoutService = individualBoutService;
         this.teamMatchBoutService = teamMatchBoutService;
+        this.dtoService = dtoService;
     }
 
     @GetMapping("/api/bouts")
     public ResponseEntity<List<BoutDtoDisplay>> getAllBouts() {
-        List<BoutDtoDisplay> boutDtos = boutService.getDtosFromEntities(boutService.getAll());
+        List<BoutDtoDisplay> boutDtos = dtoService.getDtosFromBouts(boutService.getAll());
         if (boutDtos != null) {
             return new ResponseEntity<>(boutDtos, HttpStatus.OK);
         }
-        throw new InternalServerErrorEx("Can't find bouts");
+        throw new InternalServerErrorException("Can't find bouts");
     }
 }

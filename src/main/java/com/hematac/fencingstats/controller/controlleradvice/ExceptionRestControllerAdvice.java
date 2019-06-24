@@ -1,8 +1,9 @@
 package com.hematac.fencingstats.controller.controlleradvice;
 
-import com.hematac.fencingstats.customexception.runtimeexception.InternalServerErrorEx;
 import com.hematac.fencingstats.dto.errorresponse.ErrorResponseDto;
 import com.hematac.fencingstats.dto.errorresponse.ValidationErrorDto;
+import com.hematac.fencingstats.exception.runtimeexception.InternalServerErrorException;
+import com.hematac.fencingstats.exception.runtimeexception.NotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +22,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestControllerAdvice
-public class EsceptionRestControllerAdvice extends ResponseEntityExceptionHandler {
+public class ExceptionRestControllerAdvice extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler(InternalServerErrorEx.class)
+    @ExceptionHandler(NotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    ErrorResponseDto notFoundHandler(
+            HttpServletRequest page, NotFoundException exception) {
+        return getErrorResponseDto(
+                exception.getExceptionMessage(), page, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(InternalServerErrorException.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     ErrorResponseDto internalServerErrorHandler(
-            HttpServletRequest page, InternalServerErrorEx exception) {
+            HttpServletRequest page, InternalServerErrorException exception) {
         return getErrorResponseDto(
                 exception.getExceptionMessage(), page, HttpStatus.INTERNAL_SERVER_ERROR);
     }
