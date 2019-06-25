@@ -25,7 +25,7 @@ public class BoutServiceImpl implements BoutService {
 
     @Override
     public List<Bout> getAll(int pageId) {
-        return boutRepository.findAllByOrderByDateTimeOfBoutDesc(PageRequest.of(pageId, 3));
+        return boutRepository.findAllByOrderByDateTimeOfBoutDesc(PageRequest.of(pageId, 20));
     }
 
     @Override
@@ -35,7 +35,7 @@ public class BoutServiceImpl implements BoutService {
 
     @Override
     public List<Bout> getAll(String nameFilter1, String nameFilter2, int pageId) {
-        return boutRepository.findDistinctByFencers_NameContainingAndFencers_NameContainingAllIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter1, nameFilter2, PageRequest.of(pageId, 3));
+        return boutRepository.findDistinctByFencers_NameContainingAndFencers_NameContainingAllIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter1, nameFilter2, PageRequest.of(pageId, 20));
     }
 
     @Override
