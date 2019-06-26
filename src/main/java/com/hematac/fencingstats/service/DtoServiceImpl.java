@@ -43,7 +43,7 @@ public class DtoServiceImpl implements DtoService {
         boutDto.boutType = bout.getClass().getSimpleName().equals("IndividualBout") ? "Individual":"Team";
 
         if (bout.getBoutScheme() != null){
-            boutDto.boutScheme = bout.getBoutScheme().getName();
+            boutDto.boutScheme = bout.getBoutScheme().getBoutSchemeType().toString();
         }
 
         if(bout.getAssaultOutcomeList() != null && !bout.getAssaultOutcomeList().isEmpty()) {

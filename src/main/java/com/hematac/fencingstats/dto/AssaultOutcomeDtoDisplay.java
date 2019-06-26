@@ -7,6 +7,6 @@ public class AssaultOutcomeDtoDisplay {
     public long id;
     private long boutId;
     private long eventId;
-    private List<FencerDtoDisplay> fencers;
+    private List<FencerDtoDisplay> receivingFencers;
     private boolean pointWorthy;
 }

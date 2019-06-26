@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             if (principalEmail.equals(System.getenv("ADMIN_PRESET"))) {
                 user.setIsAdmin(true);
             }
-            user.setName((String) map.get("name"));
+            user.setBoutSchemeType((String) map.get("name"));
             user.setImageUrl((String) map.get("picture"));
             user.setLastLogin(LocalDateTime.now());
 

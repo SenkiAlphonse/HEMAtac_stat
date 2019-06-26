@@ -4,6 +4,7 @@ import com.hematac.fencingstats.models.sportentities.Weapon;
 import com.hematac.fencingstats.models.sportentities.Club;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,8 +16,10 @@ public class Event {
   @GeneratedValue
   private long id;
 
+  @NotBlank(message = "Missing parameter: Event name")
   private String name;
 
+  @NotBlank(message = "Missing parameter: Event country")
   private String country;
   //could be enum or set or else, to pick country code.
 

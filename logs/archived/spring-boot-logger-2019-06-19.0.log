@@ -15,12 +15,12 @@
 2019-06-19 22:02:34,503 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6276 ms
 2019-06-19 22:02:34,927 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:02:35,905 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:02:36,158 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:02:36,158 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:02:36,366 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:02:36,712 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:02:37,196 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
 2019-06-19 22:02:37,336 INFO org.hibernate.envers.boot.internal.EnversServiceImpl [restartedMain] Envers integration enabled? : true
-2019-06-19 22:02:37,627 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
+2019-06-19 22:02:37,627 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
 2019-06-19 22:02:37,630 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
 2019-06-19 22:02:37,682 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
 2019-06-19 22:02:37,687 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
@@ -28,7 +28,7 @@
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:02:37,720 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
@@ -88,12 +88,12 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:23:58,275 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7396 ms
 2019-06-19 22:23:59,107 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:23:59,999 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:24:00,259 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:24:00,259 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:24:00,472 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:24:00,894 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:24:01,503 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
 2019-06-19 22:24:01,677 INFO org.hibernate.envers.boot.internal.EnversServiceImpl [restartedMain] Envers integration enabled? : true
-2019-06-19 22:24:02,036 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
+2019-06-19 22:24:02,036 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
 2019-06-19 22:24:02,039 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
 2019-06-19 22:24:02,093 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
 2019-06-19 22:24:02,098 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
@@ -101,7 +101,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:24:02,137 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.Bout.dateCreated
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
@@ -161,13 +161,13 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:25:26,649 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6806 ms
 2019-06-19 22:25:27,104 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:25:27,858 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:25:28,142 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:25:28,142 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:25:28,295 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:25:28,660 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:25:29,200 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
 2019-06-19 22:25:29,356 INFO org.hibernate.envers.boot.internal.EnversServiceImpl [restartedMain] Envers integration enabled? : true
 2019-06-19 22:25:29,630 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.TeamMatchBout
-2019-06-19 22:25:29,662 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.AssaultOutcome.dateCreated
+2019-06-19 22:25:29,662 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.AssaultOutcome.dateCreated
 2019-06-19 22:25:29,665 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
 2019-06-19 22:25:29,722 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
 2019-06-19 22:25:29,727 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
@@ -175,7 +175,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:25:29,768 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.AssaultOutcome.dateCreated
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.boutinfos.AssaultOutcome.dateCreated
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
@@ -235,7 +235,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:26:12,790 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6721 ms
 2019-06-19 22:26:13,283 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:26:14,129 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:26:14,409 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:26:14,409 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:26:14,579 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:26:14,920 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:26:15,501 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -244,7 +244,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:26:15,966 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.Touch
 2019-06-19 22:26:15,975 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.RedCard
 2019-06-19 22:26:16,006 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.SteppingOffPiste
-2019-06-19 22:26:16,028 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.sportentities.Fencer.dateCreated
+2019-06-19 22:26:16,028 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.sportentities.Fencer.dateCreated
 2019-06-19 22:26:16,030 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
 2019-06-19 22:26:16,085 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
 2019-06-19 22:26:16,091 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
@@ -252,7 +252,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:26:16,165 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.sportentities.Fencer.dateCreated
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.sportentities.Fencer.dateCreated
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
@@ -312,7 +312,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:26:55,319 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7328 ms
 2019-06-19 22:26:55,833 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:26:56,689 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:26:56,967 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:26:56,967 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:26:57,123 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:26:57,478 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:26:57,993 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -323,7 +323,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:26:58,487 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.SteppingOffPiste
 2019-06-19 22:26:58,513 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.BlackCard
 2019-06-19 22:26:58,524 WARN org.hibernate.cfg.AnnotationBinder [restartedMain] HHH000139: Illegal use of @Table in a subclass of a SINGLE_TABLE hierarchy: com.hematac.fencingstats.models.boutinfos.IndividualBout
-2019-06-19 22:26:58,541 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.userhandling.User.dateCreated
+2019-06-19 22:26:58,541 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.userhandling.User.dateCreated
 2019-06-19 22:26:58,543 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
 2019-06-19 22:26:58,601 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
 2019-06-19 22:26:58,606 INFO org.apache.juli.logging.DirectJDKLog [restartedMain] Stopping service [Tomcat]
@@ -331,7 +331,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:26:58,658 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.userhandling.User.dateCreated
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @Temporal should only be set on a java.util.Date or java.util.Calendar property: com.hematac.fencingstats.models.userhandling.User.dateCreated
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
@@ -391,7 +391,7 @@ Caused by: org.hibernate.AnnotationException: @Temporal should only be set on a 
 2019-06-19 22:27:30,486 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6816 ms
 2019-06-19 22:27:31,033 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:27:31,927 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:27:32,195 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:27:32,195 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:27:32,347 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:27:32,695 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:27:33,282 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -2315,7 +2315,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'fencingstats.users' doesn't 
 2019-06-19 22:27:44,538 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2019-06-19 22:27:44,542 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
 2019-06-19 22:27:44,586 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2019-06-19 22:27:45,646 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer
+2019-06-19 22:27:45,646 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer
 2019-06-19 22:27:45,648 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
 2019-06-19 22:27:45,649 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2019-06-19 22:27:47,318 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
@@ -2325,7 +2325,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'fencingstats.users' doesn't 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:27:47,484 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.hematac.fencingstats.models.boutinfos.IndividualBout.fencerOne -> com.hematac.fencingstats.models.sportentities.Fencer
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
@@ -2426,7 +2426,7 @@ Caused by: org.hibernate.TransientPropertyValueException: object references an u
 2019-06-19 22:31:37,161 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6853 ms
 2019-06-19 22:31:37,662 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:31:38,429 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:31:38,692 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:31:38,692 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:31:38,855 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:31:39,191 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:31:39,742 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -4350,7 +4350,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'fencingstats.users' doesn't 
 2019-06-19 22:31:50,218 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
 2019-06-19 22:31:50,223 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
 2019-06-19 22:31:50,263 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2019-06-19 22:31:51,443 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+2019-06-19 22:31:51,443 WARN org.springframework.context.support.AbstractApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
 2019-06-19 22:31:51,445 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
 2019-06-19 22:31:51,446 INFO org.hibernate.tool.schema.internal.SchemaDropperImpl$DelayedDropActionImpl [restartedMain] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
 2019-06-19 22:31:53,267 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
@@ -4360,7 +4360,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'fencingstats.users' doesn't 
 
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-06-19 22:31:53,404 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
+org.springframework.beans.factory.BeanCreationException: Error creating bean with boutSchemeType 'individualBoutController' defined in file [C:\Users\Nagy6Kri\Source\HEMAtac_Stat\HEMAtac_stat\out\production\classes\com\hematac\fencingstats\controller\IndividualBoutController.class]: Bean instantiation via constructor failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.hematac.fencingstats.controller.IndividualBoutController]: Constructor threw exception; nested exception is org.springframework.transaction.TransactionSystemException: Could not commit JPA transaction; nested exception is javax.persistence.RollbackException: Error while committing the transaction
 	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:304)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:285)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1325)
@@ -4425,7 +4425,7 @@ Caused by: javax.persistence.RollbackException: Error while committing the trans
 	... 50 common frames omitted
 Caused by: javax.validation.ConstraintViolationException: Validation failed for classes [com.hematac.fencingstats.models.sportentities.Fencer] during persist time for groups [javax.validation.groups.Default, ]
 List of constraint violations:[
-	ConstraintViolationImpl{interpolatedMessage='Fencer's name is required', propertyPath=name, rootBeanClass=class com.hematac.fencingstats.models.sportentities.Fencer, messageTemplate='Fencer's name is required'}
+	ConstraintViolationImpl{interpolatedMessage='Fencer's boutSchemeType is required', propertyPath=boutSchemeType, rootBeanClass=class com.hematac.fencingstats.models.sportentities.Fencer, messageTemplate='Fencer's boutSchemeType is required'}
 ]
 	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.validate(BeanValidationEventListener.java:140)
 	at org.hibernate.cfg.beanvalidation.BeanValidationEventListener.onPreInsert(BeanValidationEventListener.java:80)
@@ -4462,7 +4462,7 @@ List of constraint violations:[
 2019-06-19 22:34:13,985 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7447 ms
 2019-06-19 22:34:14,456 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:34:15,192 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:34:15,471 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:34:15,471 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:34:15,619 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:34:16,003 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:34:16,528 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -6525,7 +6525,7 @@ java.lang.NullPointerException: null
 2019-06-19 22:41:16,347 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7088 ms
 2019-06-19 22:41:16,827 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:41:17,617 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:41:17,929 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:41:17,929 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:41:18,089 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:41:18,450 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:41:19,016 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -8482,7 +8482,7 @@ Using generated security password: 25f53fbc-24d0-4ade-8bc2-331acc808b87
 2019-06-19 22:42:40,806 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7100 ms
 2019-06-19 22:42:41,277 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:42:42,038 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:42:42,314 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:42:42,314 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:42:42,466 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:42:42,794 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:42:43,349 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -10919,7 +10919,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [fragm
 2019-06-19 22:45:11,382 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7137 ms
 2019-06-19 22:45:11,847 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:45:12,621 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:45:12,859 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:45:12,859 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:45:13,042 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:45:13,379 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:45:13,920 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -12872,7 +12872,7 @@ Using generated security password: 3ff1032d-72e1-407b-b94e-1c7802f7d3c0
 2019-06-19 22:47:12,084 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7601 ms
 2019-06-19 22:47:12,720 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:47:13,511 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:47:13,783 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:47:13,783 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:47:13,931 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:47:14,269 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:47:14,800 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -14806,7 +14806,7 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'fencingstats.users' doesn't 
 2019-06-19 22:47:52,001 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6968 ms
 2019-06-19 22:47:52,414 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:47:53,149 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:47:53,403 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:47:53,403 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:47:53,584 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:47:53,893 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:47:54,411 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -14852,7 +14852,7 @@ Using generated security password: 56a7dca1-8996-4f4b-bdef-aecd113b459b
 2019-06-19 22:50:53,271 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 7157 ms
 2019-06-19 22:50:53,725 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:50:54,458 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:50:54,728 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:50:54,728 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:50:54,887 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:50:55,245 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:50:55,799 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -16804,7 +16804,7 @@ Using generated security password: 34d97081-23bf-4f57-b15b-ba89fa977e10
 2019-06-19 22:53:21,761 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6704 ms
 2019-06-19 22:53:22,221 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:53:22,982 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:53:23,263 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:53:23,263 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:53:23,418 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:53:23,773 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:53:24,303 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -18753,7 +18753,7 @@ Using generated security password: 3fefb3d1-1c37-4d75-81f5-e03d338083ac
 2019-06-19 22:56:14,151 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6860 ms
 2019-06-19 22:56:14,621 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-19 22:56:15,359 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-19 22:56:15,652 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-19 22:56:15,652 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-19 22:56:15,783 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-19 22:56:16,121 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-19 22:56:16,675 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect

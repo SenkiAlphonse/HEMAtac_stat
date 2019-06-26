@@ -15,7 +15,7 @@
 2019-06-25 16:54:14,749 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 5106 ms
 2019-06-25 16:54:15,102 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-25 16:54:15,793 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-25 16:54:15,971 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-25 16:54:15,971 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-25 16:54:16,116 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-25 16:54:16,404 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-25 16:54:16,786 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -2074,7 +2074,7 @@ Using generated security password: 45589296-7afc-48c8-afd8-b0ce05c25394
 2019-06-25 16:56:09,113 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 16676 ms
 2019-06-25 16:56:09,473 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-25 16:56:10,084 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-25 16:56:10,244 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-25 16:56:10,244 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-25 16:56:10,423 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-25 16:56:10,660 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-25 16:56:11,054 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
@@ -4145,7 +4145,7 @@ Using generated security password: fa0f5f92-496c-4640-b7b2-996361f94d1c
 2019-06-25 16:59:42,265 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 6191 ms
 2019-06-25 16:59:42,670 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
 2019-06-25 16:59:43,335 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2019-06-25 16:59:43,502 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-06-25 16:59:43,502 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [boutSchemeType: default]
 2019-06-25 16:59:43,691 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate Core {5.4.2.Final}
 2019-06-25 16:59:44,059 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
 2019-06-25 16:59:44,531 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect

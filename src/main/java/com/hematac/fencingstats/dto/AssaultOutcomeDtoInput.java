@@ -1,4 +1,4 @@
 package com.hematac.fencingstats.dto;
 
-public class AssaultOutcomeDtoInut {
+public class AssaultOutcomeDtoInput {
 }

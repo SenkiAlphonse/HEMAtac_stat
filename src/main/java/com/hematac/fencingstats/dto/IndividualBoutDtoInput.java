@@ -9,9 +9,8 @@ public class IndividualBoutDtoInput {
     @NotNull(message = "Empty parameter: bout scheme (e.g. pool or elimination)")
     public long boutSchemeId;
     public String date;
-
-    @NotNull(message = "Empty parameter: fencer one name")
+    @NotNull(message = "Empty parameter: fencer one ID")
     public long fencerOneId;
-    @NotNull(message = "Empty parameter: fencer two name")
+    @NotNull(message = "Empty parameter: fencer two ID")
     public long fencerTwoId;
 }

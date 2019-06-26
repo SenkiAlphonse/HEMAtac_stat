@@ -12,8 +12,7 @@ public class BoutScheme {
   @GeneratedValue
   private long id;
 
-  private String name;
-  //pool, DE, final, repechage
+  private BoutSchemeTypes boutSchemeType;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "rulebook_id")
@@ -31,12 +30,12 @@ public class BoutScheme {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public BoutSchemeTypes getBoutSchemeType() {
+    return boutSchemeType;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setBoutSchemeType(BoutSchemeTypes boutSchemeType) {
+    this.boutSchemeType = boutSchemeType;
   }
 
   public RuleBook getRuleBook() {

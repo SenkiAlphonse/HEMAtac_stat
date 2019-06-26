@@ -48,7 +48,7 @@
         <div th:each="bout : ${bouts}">
             <tr>
                 <td data-label="fencer_1">
-                    <p th:text="${bout.fencerOne.name}"></p>
+                    <p th:text="${bout.fencerOne.boutSchemeType}"></p>
                 </td>
                 <td data-label="fencer_1_score">
                     <p th:text="${bout.fencerOneScore}"></p>
@@ -57,7 +57,7 @@
                     <p th:text="${bout.fencerTwoScore}"></p>
                 </td>
                 <td data-label="fencer_2">
-                    <p th:text="${bout.fencerTwo.name}"></p>
+                    <p th:text="${bout.fencerTwo.boutSchemeType}"></p>
                 </td>
                 <td data-label="event">
                     <p th:text="${bout.event}"></p>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="LOGS" value="./logs" />
+    <property boutSchemeType="LOGS" value="./logs" />
 
-    <appender name="Console"
+    <appender boutSchemeType="Console"
               class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
             <Pattern>
@@ -12,7 +12,7 @@
         </layout>
     </appender>
 
-    <appender name="RollingFile"
+    <appender boutSchemeType="RollingFile"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS}/spring-boot-logger.log</file>
         <encoder
@@ -39,7 +39,7 @@
     </root>
 
     <!-- LOG "com.hematac.fencingstats*" at DEBUG level -->
-    <logger name="com.hematac.fencingstats" level="debug" additivity="false">
+    <logger boutSchemeType="com.hematac.fencingstats" level="debug" additivity="false">
         <appender-ref ref="RollingFile" />
         <appender-ref ref="Console" />
     </logger>
