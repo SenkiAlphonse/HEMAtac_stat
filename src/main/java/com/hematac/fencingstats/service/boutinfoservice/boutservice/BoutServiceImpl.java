@@ -1,9 +1,6 @@
 package com.hematac.fencingstats.service.boutinfoservice.boutservice;
 
-import com.hematac.fencingstats.dto.BoutDtoDisplay;
 import com.hematac.fencingstats.models.boutinfos.Bout;
-import com.hematac.fencingstats.models.boutinfos.FencersOfBout;
-import com.hematac.fencingstats.models.sportentities.Fencer;
 import com.hematac.fencingstats.repository.boutinforepository.boutrepository.BoutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -28,17 +25,17 @@ public class BoutServiceImpl implements BoutService {
 
     @Override
     public List<Bout> getAll(int pageId) {
-        return boutRepository.findAllByOrderByDateTimeOfBoutDesc(PageRequest.of(pageId, 3));
+        return boutRepository.findAllByOrderByDateTimeOfBoutDesc(PageRequest.of(pageId, 20));
     }
 
     @Override
     public List<Bout> getAll(String nameFilter, int pageId) {
-        return boutRepository.findDistinctByFencers_NameContainingIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter, PageRequest.of(pageId, 3));
+        return boutRepository.findDistinctByFencers_NameContainingIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter, PageRequest.of(pageId, 20));
     }
 
     @Override
     public List<Bout> getAll(String nameFilter1, String nameFilter2, int pageId) {
-        return boutRepository.findDistinctByFencers_NameContainingAndFencers_NameContainingAllIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter1, nameFilter2, PageRequest.of(pageId, 3));
+        return boutRepository.findDistinctByFencers_NameContainingAndFencers_NameContainingAllIgnoreCaseOrderByDateTimeOfBoutDesc(nameFilter1, nameFilter2, PageRequest.of(pageId, 20));
     }
 
     @Override

@@ -15,12 +15,13 @@ public class RuleBook {
   @ManyToOne
   @JoinColumn(name="maintainer_federation_id")
   private Federation maintainerFederation;
-  //do i need a mapping here?
 
   private String ruleCreator;
   //ha nem fed, ide lehet kommentelni. később kialakulhat vmi konkrét entitás ami erre jó lehet
 
   private RuleSystems ruleSystem;
+
+  private RefereeingModel refereeingModel;
 
   private float startingDistance;
 
@@ -70,6 +71,14 @@ public class RuleBook {
 
   public void setRuleSystem(RuleSystems ruleSystem) {
     this.ruleSystem = ruleSystem;
+  }
+
+  public RefereeingModel getRefereeingModel() {
+    return refereeingModel;
+  }
+
+  public void setRefereeingModel(RefereeingModel refereeingModel) {
+    this.refereeingModel = refereeingModel;
   }
 
   public float getStartingDistance() {

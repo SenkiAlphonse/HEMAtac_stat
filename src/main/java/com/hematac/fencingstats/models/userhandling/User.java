@@ -13,7 +13,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "appusers")
+@Table(name = "users")
 public class User {
 
   @Id

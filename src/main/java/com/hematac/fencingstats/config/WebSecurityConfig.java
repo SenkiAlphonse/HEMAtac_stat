@@ -13,7 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import java.time.LocalDateTime;
 
-
+//VulpesVelox project, extracting user info from google signin
 @Configuration
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -52,7 +52,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             if (principalEmail.equals(System.getenv("ADMIN_PRESET"))) {
                 user.setIsAdmin(true);
             }
-            user.setName((String) map.get("name"));
+            user.setBoutSchemeType((String) map.get("name"));
             user.setImageUrl((String) map.get("picture"));
             user.setLastLogin(LocalDateTime.now());
 

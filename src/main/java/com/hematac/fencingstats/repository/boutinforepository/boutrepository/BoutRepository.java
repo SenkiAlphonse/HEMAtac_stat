@@ -19,7 +19,7 @@ public interface BoutRepository extends PagingAndSortingRepository<Bout, Long> {
 
 /*    List<Bout> filteredBouts= boutService.getAll(pageId)
             .stream()
-            .filter(b -> b.getFencerOne().getName().toLowerCase().contains(fencerName)
-                    || b.getFencerTwo().getName().toLowerCase().contains(fencerName)).collect(Collectors.toList());
+            .filter(b -> b.getFencerOne().getBoutSchemeType().toLowerCase().contains(fencerName)
+                    || b.getFencerTwo().getBoutSchemeType().toLowerCase().contains(fencerName)).collect(Collectors.toList());
             model.addAttribute("bouts", boutService.getDtosFromEntities(filteredBouts));*/
 }

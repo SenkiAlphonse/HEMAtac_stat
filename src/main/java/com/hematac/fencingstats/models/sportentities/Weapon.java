@@ -14,9 +14,9 @@ public class Weapon {
   @GeneratedValue
   private long id;
 
-  private String weaponName;
+  private String name;
 
-  private String athleteGender;
+  private AthleteCategory athleteCategory;
 
   @ManyToMany(mappedBy = "weapons")
   private Set<Event> events = new HashSet<>();
@@ -29,20 +29,20 @@ public class Weapon {
     this.id = id;
   }
 
-  public String getWeaponName() {
-    return weaponName;
+  public String getName() {
+    return name;
   }
 
-  public void setWeaponName(String weaponName) {
-    this.weaponName = weaponName;
+  public void setName(String name) {
+    this.name = name;
   }
 
-  public String getAthleteGender() {
-    return athleteGender;
+  public AthleteCategory getAthleteGender() {
+    return athleteCategory;
   }
 
-  public void setAthleteGender(String athleteGender) {
-    this.athleteGender = athleteGender;
+  public void setAthleteGender(AthleteCategory athleteCategory) {
+    this.athleteCategory = athleteCategory;
   }
 
   public Set<Event> getEvents() {
