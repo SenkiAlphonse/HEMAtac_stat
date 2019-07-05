@@ -13,7 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import java.time.LocalDateTime;
 
-
+//VulpesVelox project, extracting user info from google signin
 @Configuration
 @EnableOAuth2Sso
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

@@ -22,7 +22,7 @@ public class BoutController {
         this.dtoService = dtoService;
     }
 
-    @GetMapping("/bouts")
+    @GetMapping("/svc/bouts")
     public String displayBouts(Model model,
                                @RequestParam(name = "pageid", required = false, defaultValue = "0") int pageId,
                                @RequestParam(name = "fencername", required = false)String fencerName) {
