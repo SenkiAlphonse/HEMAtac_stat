@@ -20,6 +20,7 @@ public class User {
   @GeneratedValue
   private long id;
 
+  private String userName;
   private String firstName;
   private String middleName;
   private String lastName;
@@ -54,6 +55,14 @@ public class User {
       inverseJoinColumns=@JoinColumn(name="studentId")
   )
   private Set<User> isAllowedAccessTo;
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
 
   public long getId() {
     return id;
