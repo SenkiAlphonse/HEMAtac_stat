@@ -21,6 +21,8 @@ public class Outh2LoginConfig {
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
+                    .csrf()
+                        .disable()
                     .authorizeRequests()
                         .anyRequest().authenticated()
                         .and()
