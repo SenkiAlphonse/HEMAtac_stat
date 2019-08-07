@@ -1,3 +1,4 @@
+/*
 package com.hematac.fencingstats.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,3 +47,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authoritiesByUsernameQuery("select username, role from users where user_name=?");
     }
 }
+*/
